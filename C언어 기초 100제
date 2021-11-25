@@ -21,20 +21,74 @@ int main()
 
 int main()
 {
-	printf("Hello\n");                 #\n 은 줄바꿈
+	printf("Hello\n");                 //         \n 은 줄바꿈
 	printf("World");
 	return 0;
 } 
 
-또는
+
+
+printf("Hello\n");
+printf("World");
+
+둘이 같음
+
+printf("Hello\nWorld");
+	
+                                      //    // 은 주석처리
+
+
+#1004
+
 #include <stdio.h>
 
-int main()
-{
-	printf("Hello\nWorld");
+int main() {
+	printf("\'Hello\'");            //printf('')는 오류뜸 / #printf("")로 해줘야
 
 	return 0;
 } 
 
-                                      #// 은 주석처리
-#1004
+#1005
+#include <stdio.h>
+
+int main() {
+	printf("\"Hello World\"");
+
+	return 0;
+} 
+
+//1006번
+#include <stdio.h>
+
+int main() 
+{
+	printf("\"!@#$%%^&*()\"");                 //  %%의 출력
+
+	return 0;
+}
+
+
+//1007 백슬래시 \ 의 출력은 \\로
+#include <stdio.h>
+
+int main() 
+{
+	printf("\"C:\\Download\\hello.cpp\"");
+
+	return 0;
+} 
+
+//1008
+┌┬┐ 특수문자의 출력
+├┼┤
+└┴┘
+#include <stdio.h>
+
+int main()
+{
+	printf("\u250C\u252C\u2510\n");            // \u250C
+	printf("\u251C\u253C\u2524\n");
+	printf("\u2514\u2534\u2518\n");
+
+	return 0;
+}
