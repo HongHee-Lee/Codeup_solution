@@ -1,0 +1,40 @@
+#1001번
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello");
+	return 0;
+}
+
+#1002번
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello World");
+	return 0;
+}
+
+#1003번
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello\n");                 #\n 은 줄바꿈
+	printf("World");
+	return 0;
+} 
+
+또는
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello\nWorld");
+
+	return 0;
+} 
+
+                                      #// 은 주석처리
+#1004
