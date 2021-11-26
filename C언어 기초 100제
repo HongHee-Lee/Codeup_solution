@@ -201,5 +201,91 @@ int main() {
                                                              //printf 에서 &x는 x의 주소를 출력하겠다는 뜻 
 
 
+
+-----------------------------
+형식 외우기
+#include <stdio.h>
+
+int main() {
+	scanf("입력 받을 형식지정자 %d", 저장할 변수주소);
+	printf("출력할 내용 및 형식지정자 %");
+	return 0;
+}
+-----------------------------
+
+
 //1012
 https://www.youtube.com/watch?v=YCwF_z4ku2w&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=11
+https://codeup.kr/problem.php?id=1012
+위 주소 사진 참고
+
+#include <stdio.h>
+
+int main() {
+	float x;
+	scanf("%f", &x);
+	printf("%f",x);
+	return 0;
+}
+
+
+
+
+//1013
+https://codeup.kr/problem.php?id=1013
+https://www.youtube.com/watch?v=K8xYfxRtDl0&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=12
+
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	scanf("%d%d",&a, &b);      // 엔터 또는 공백으로 입력 데이터가 구분되어 입력된다(엔터쳐봐~ 쉽게 이해됨)
+	printf("%d %d", a, b);
+	return 0;
+}
+
+//1014
+#include <stdio.h>
+
+int main() {
+	char x,y;
+	scanf("%c %c",&x,&y); //읽어 들이겠다 
+	printf("%c %c", y,x);
+	return 0;
+}
+
+
+//1015
+https://codeup.kr/problem.php?id=1015
+https://www.youtube.com/watch?v=btm5Dyp0KYs&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=14
+결과를 소수점 셋 째 자리에서 반올림 해, 소숫점 이하 둘째 자리까지 출력한다.
+(%.2f를 이용하면 된다.)
+
+//include : 지시문(선언하는거 )
+지시문이 나타나는 지점에서 지정된 파일의 내용을 포함하도록 전처리기에 지시 합니다.
+
+
+#include <stdio.h>
+
+int main() {
+	float fn;
+	scanf("%f", &fn);
+	printf("%.2f", fn);    // %.2f 결과를 소수점 셋 째 자리에서 반올림 해, 소숫점 이하 둘째 자리까지 출력한다.
+	return 0;
+} 
+
+
+//1017
+#include <stdio.h>
+
+int main() {
+	int good=1024;                  //;안붙이는 실수 조심 //아래 scanf 에서 good값은 덮어써짐 
+	scanf("%d", &good);                      // "%d %d %d" 세번 찍는 잘못 
+	printf("%d %d %d", good, good,good);
+	return 0;
+} 
+
+
+//1018
+https://codeup.kr/problem.php?id=1018
+https://www.youtube.com/watch?v=dtc-p_j5h6s&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=16
