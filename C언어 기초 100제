@@ -158,3 +158,44 @@ int main()
 //1011
 11번문제 링크 
 https://www.youtube.com/watch?v=SthyNGsatK4&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=10
+
+#include <stdio.h>
+
+int main() {
+	char x;
+	scanf("%c", &x); //c에 있는걸 주소 x에 저장하겠다 
+	printf("%c",x);  //x에 저장되있는걸 character 형식으로 출력하겠다.
+	return 0; 
+}
+
+
+줄바꿈\n과 10진 형태%d를 사용한 출력
+#include <stdio.h>
+
+int main() {
+	char x;
+	scanf("%c", &x); //c에 있는걸 주소 x에 저장하겠다 
+	printf("%c\n",x);  //x에 저장되있는걸 character 형식으로 출력하겠다.
+	printf("%d", &x);  //x라는 주소를 가지고 와서 10진 형태(%d)로 찍어라  
+	return 0; 
+}
+
+
+
+추가적 공부
+#include <stdio.h>
+
+int main() {
+	char x,z;
+	scanf("%c %c", &x,&z); //c에 있는걸 주소 x에 저장하겠다 //2개를 받아들이겠다 
+	printf("%c %c\n",x, z);  //xz에 저장되있는걸 character 형식으로 출력하겠다.
+	printf("%d %d", &x,&z);  //xz라는 주소를 가지고 와서 10진 형태(%d)로 찍어라  
+	return 0; 
+}
+
+                                                              //&는 주소를 나타낸다
+                                                             //printf 에서 &x는 x의 주소를 출력하겠다는 뜻 
+
+
+//1012
+https://www.youtube.com/watch?v=YCwF_z4ku2w&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=11
