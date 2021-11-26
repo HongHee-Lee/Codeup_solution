@@ -286,6 +286,56 @@ int main() {
 } 
 
 
-//1018
+//1018 시간 입력받아 그대로 출력하기
 https://codeup.kr/problem.php?id=1018
 https://www.youtube.com/watch?v=dtc-p_j5h6s&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=16
+
+scanf( ) 함수는 지정한 형식(format)에 따라 입력받는 함수이다.
+
+#include <stdio.h> 
+
+int main() {
+	int h, m;
+	scanf("%d:%d", &h, &m);    //3:16입력하면 :기준으로 나뉘어 저장된다 
+	printf("%d:%d", h, m );
+	return 0;
+}
+
+ 
+//1019
+https://codeup.kr/problem.php?id=1019
+https://www.youtube.com/watch?v=xnvuuOHN-IQ&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=17
+
+#include <stdio.h>
+
+int main() {
+	int y,m,d;
+	scanf("%d.%d.%d", &y,&m,&d);
+	printf("%04d.%02d.%02d",y,m,d);                     //%02d  8을 08로 출력 
+	return 0;
+}
+
+
+//2020(c언어 최초로 순수하게 내가 홀로 낸 옳은 답)
+#include <stdio.h>
+
+int main() {
+	int A,B;
+	scanf("%d-%d",&A,&B);
+	printf("%06d%07d",A,B);         //주민번호 앞자리 6자리 , 뒷자리 7자리 조건 
+	return 0;
+}
+
+강사님이 알려준 다른방법
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	char a1, a2, a3, a4, a5, a6;       //하나하나 문자로 입력받기 
+	char b1, b2, b3, b4, b5, b6, b7;   //문자는 하나밖에 입력이안됨
+	
+	scanf("%c%c%c%c%c%c-%c%c%c%c%c%c%c",&a1, &a2, &a3, &a4, &a5, &a6,&b1, &b2, &b3, &b4, &b5, &b6, &b7);
+	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c",a1, a2, a3, a4, a5, a6,b1, b2, b3, b4, b5, b6, b7);
+	return 0;
+}
+
