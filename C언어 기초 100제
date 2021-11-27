@@ -356,3 +356,51 @@ int main() {
                                                                                                     2     //공백 100칸 2 1칸 총 101칸 추정
 
 //2021
+https://codeup.kr/problem.php?id=1021
+https://www.youtube.com/watch?v=NEZv6gwNkXs&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=19
+
+#include <stdio.h>
+
+int main() {
+	char data[51]="";     //char(형) data(이름) [51](개수)   -> 전부다 '배열'이라고 한다. 
+	                      // \0 은 그 문자열의 끝을 나타냄 (50자 이하 + \0 ->총 '51') 
+						  // 배열은 주소에 &않아도 됨 
+						  //코드업 문제의 사진 참고 
+	scanf("%s", data);          // %s는 문자열 즉 string 
+	printf("%s", data);
+	return 0;
+}
+
+//2022(공백 문자가 포함되어 있는 문장을 입력받고 그대로 출력하는 연습을 해보자.) -> fgets!
+https://codeup.kr/problem.php?id=1022
+https://www.youtube.com/watch?v=Q2BbepLkrEs&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=20
+
+#include <stdio.h>
+
+int main() {
+	char data[2001];     //char(형) data(이름) [51](개수)   -> 전부다 '배열'이라고 한다. 
+	                      // \0 은 그 문자열의 끝을 나타냄 (50자 이하 + \0 ->총 '51') 
+						  // 배열은 주소에 &않아도 됨 
+						  //코드업 문제의 사진 참고 
+	fgets(data, 2000, stdin);                                                    // fgets(data, 2000, stdin)
+	printf("%s", data);          // %s는 문자열 즉 string
+	return 0;
+}
+
+//fgets 위와 같이 실행하면 공백이 포함된 문장을 키보드(stdin)로 입력받아
+//최대 2000자까지 data[ ] 공간에 저장하고 출력할 수 있다.
+//stdin (표준입력장치를 통해서 의 뜻)
+
+// hello world 입력시 공백이 잘려 hello 가 잘려 출력되는 문제를 해결할수 있음 
+
+
+gets 공부!!!!
+
+#include <stdio.h>            //<stdio.h>는 라이브러리  
+
+int main() {
+	char data[2001];
+	gets(data);                                             //gets(data);
+	printf("%s", data);    
+	return 0;
+}
