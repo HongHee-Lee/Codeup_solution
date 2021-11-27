@@ -386,6 +386,10 @@ int main() {
 	printf("%s", data);          // %s는 문자열 즉 string
 	return 0;
 }
+hello world
+hello world
+                                                        //빈칸생김(엔터 입력됨)
+--------------------------------
 
 //fgets 위와 같이 실행하면 공백이 포함된 문장을 키보드(stdin)로 입력받아
 //최대 2000자까지 data[ ] 공간에 저장하고 출력할 수 있다.
@@ -396,7 +400,7 @@ int main() {
 
 gets 공부!!!!
 
-#include <stdio.h>            //<stdio.h>는 라이브러리  
+#include <stdio.h>            //<stdio.h>는 라이브러리 (헤더 파일) 
 
 int main() {
 	char data[2001];
@@ -404,3 +408,168 @@ int main() {
 	printf("%s", data);    
 	return 0;
 }
+hello wolrd
+hello wolrd
+--------------------------------                    //(hello world아래 빈칸 없이 결과출력)
+
+
+
+puts 공부 !!!!
+#include <stdio.h>            //<stdio.h>는 라이브러리  
+
+int main() {
+	char data[2001];
+	gets(data);                                     //gets(data);
+	puts(data);                                    //puts(data);
+	return 0;
+}
+hello world
+hello world
+
+--------------------------------
+
+
+fputs 도 있음!!
+
+
+
+
+//1023(실수 1개를 입력받아 정수 부분과 실수 부분으로 나누어 출력한다.)
+https://codeup.kr/problem.php?id=1023
+https://www.youtube.com/watch?v=zG97SbiidZk&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=21
+
+내풀이
+#include <stdio.h>
+
+int main() {
+	int a,b;
+ 	scanf("%d.%d", &a, &b);                  //a,b는 변수기 때문에 주소를 지정해줘야(&) 
+	printf("%d\n%d",a,b); 
+	return 0;
+}
+
+결과 
+1
+414
+
+
+//1024(단어 1개 입력받아 나누어 출력하기(설명))
+https://codeup.kr/problem.php?id=1024
+https://www.youtube.com/watch?v=DhUHRY2BXRE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=22
+
+참고
+C언어에서는 문장을 저장하기 위해 특별한 방법을 사용하지 않고,
+배열이라는 연속된 공간에 문자들을 연속으로 한 개씩 저장하는 방법을 사용한다.
+단, 문자열(문자가 연속적으로 연결된 줄이라는 의미. 즉 문장)의 마지막임을 나타내기 위해
+문자열의 마지막에 널(NULL) 문자라는 특별한 의미를 가지는 문자를 삽입해 문장임을 나타낸다.
+
+문자로는 '\0', 아스키문자의 정수값은 0을 의미하며 NULL 로도 사용할 수 있다.
+
+ 영문자들을 한 개씩 순차적으로 검사해서, 문장의 마지막을 나타내는 널문자가 나올 때까지 모양을 만들어 출력하면 되는 것이다.
+
+
+#include <stdio.h>
+
+int main() {
+	char d[21];    // 20자 이하이다 
+	scanf("%s", d);    //배열의 첫번째 주소를 가리키는 d. 주소를 나타내는 &안써줘도됨. 
+	//printf("%s",d);     //하면 처음부터 끝까지 출력됨 (asdf 입력시 asdf 그대로 출력됨   
+	printf("%c %c", d[0],d[3]);    // 0번째 3번째 자리 출력 asdf 입력시 a d 출력 
+	return 0; 
+}
+
+
+
+
+0  1  2  3  4
+a  s  d  f  \0
+
+4에 널(null)값을 출력하는 방법 
+
+#include <stdio.h>
+
+int main() {
+	char d[21];    // 20자 이하이다 
+	scanf("%s", d);    //배열의 첫번째 주소를 가리키는 d. 주소를 나타내는 &안써줘도됨. 
+	//printf("%s",d);     //하면 처음부터 끝까지 출력됨 (asdf 입력시 asdf 그대로 출력됨   
+	printf("%c %c %s", d[0],d[3],d[4]);    // 0번째 3번째 자리 출력 asdf 입력시 a d 출력                  //printf("%s") 로 널 출력!
+	return 0; 
+}
+결과
+asdf
+a f (null)
+--------------------------------
+printf("%s", ...); 는 결국, 저장되어있는 문자의 마지막까지, 즉 널문자가 나올 때까지 형식에 맞추어 출력해 주라는 의미를 가진다.
+
+
+1024번답
+//반복문으로 출력하는 방법 
+
+#include <stdio.h>
+int main() 
+{
+	char d[21];    // 20자 이하이다 
+	int i;
+	
+	scanf("%s", d);    //배열의 첫번째 주소를 가리키는 d. 주소를 나타내는 &안써줘도됨. 
+	//printf("%s",d);     //하면 처음부터 끝까지 출력됨 (asdf 입력시 asdf 그대로 출력됨   
+	
+	for(i=0; d[i]!='\0'; i++)       //i를 0으로 초기화 //i++ 는 i=i+1; 
+	{
+		printf("'%c'\n", d[i]);    // i 가 0,12,3,4... 계속 바뀌면 됨                 //"'%c'\n"에서 '%c'옳은 표현
+    }
+	return 0; 
+}
+
+
+
+
+//1025(정수 1개 입력받아 나누어 출력하기(설명))
+https://codeup.kr/problem.php?id=1025
+https://www.youtube.com/watch?v=OfLJC49OwJM&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=23
+다섯 자리의 정수 1개를 입력받아 각 자리별로 나누어 출력한다.
+
+#include <stdio.h>
+int main() 
+{
+	int a,b,c,d,e; 
+	scanf("%1d%1d%1d%1d%1d", &a, &b, &c, &d, &e);
+	printf("[%d]\n",a*10000); 
+	printf("[%d]\n",b*1000);
+	printf("[%d]\n",c*100);
+	printf("[%d]\n",d*10);
+	printf("[%d]\n",e);
+	return 0;
+}
+
+입력 75254
+결과
+[70000]
+[5000]
+[200]
+[50]
+[4]
+
+
+다른방법 
+
+
+#include <stdio.h>
+int main() 
+{
+	int a,b,c,d,e; 
+	int z = 0; 
+	scanf("%1d%1d%1d%1d%1d", &a, &b, &c, &d, &e);
+	printf("[%d%04d]\n",a,z);                                  //("[%d%04d]\n",a,z) 요기 이해할수 있겠어요??
+	printf("[%d%03d]\n",b,z);
+	printf("[%d%02d]\n",c,z);
+	printf("[%d%01d]\n",d,z);
+	printf("[%d]",e,z);
+	return 0;
+}
+
+
+
+//1026
+시분초 입력받아 분만 출력하기(설명)
+https://codeup.kr/problem.php?id=1026
