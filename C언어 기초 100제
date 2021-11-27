@@ -707,7 +707,7 @@ double 데이터형을 사용하면
 int main()
 {
 	double a;
-	scanf("%lf", &a);
+	scanf("%lf", &a);                     //long float!!!
 	printf("%.11lf", a);
 
     return 0;
@@ -715,3 +715,35 @@ int main()
 3.14159265359785
 3.14159265360
 --------------------------------
+
+
+//1030(정수 1개 입력받아 그대로 출력하기3(설명)) //long long int 사용하기
+입력되는 정수의 범위는 -9223372036854775808 ~ +9223372036854775807 이다.
+https://codeup.kr/problem.php?id=1030
+
+
+#include <stdio.h>
+
+int main()
+{
+	long long int n;
+	scanf("%lld", &n);
+	printf("%lld", n);
+    return 0;
+}
+9223372036854775807
+9223372036854775807
+--------------------------------
+
+long long int
+vs
+unsigned int 정수자리 2배로 크게 그러나 -못사용
+
+
+
+
+
+//1031(10진 정수 1개 입력받아 8진수로 출력하기(설명))
+https://codeup.kr/problem.php?id=1031
+https://www.youtube.com/watch?v=wQOSXka4J8U&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=29
+ 
