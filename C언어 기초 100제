@@ -570,6 +570,148 @@ int main()
 
 
 
-//1026
+//1026 맞음!!!
 시분초 입력받아 분만 출력하기(설명)
 https://codeup.kr/problem.php?id=1026
+https://www.youtube.com/watch?v=fBADWpSuqrc&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=24
+
+
+
+#include <stdio.h>
+int main() 
+{
+	int h, m, s;
+	scanf("%d:%d:%d", &h, &m, &s);
+	printf("%d", m);
+	return 0;
+}
+
+//1027
+년월일 입력 받아 형식 바꿔 출력하기(설명)
+https://codeup.kr/problem.php?id=1027
+https://www.youtube.com/watch?v=32aeNFnf8Yg&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=25
+
+#include <stdio.h>
+
+int main()
+{
+	int y,m,d;
+	scanf("%d.%d.%d",&y,&m,&d);
+	printf("%02d-%02d-%04d", d, m, y);
+
+
+	return 0;
+}
+입력 예시   
+2014.07.15
+
+출력 예시
+15-07-2014 
+
+
+
+//1028
+정수 1개 입력받아 그대로 출력하기2(설명)
+(단, 입력되는 정수의 범위는 0 ~ 4294967295 이다.)
+
+입력 예시   
+2147483648
+출력 예시
+2147483648
+
+
+참고
+-2147483648 ~ +2147483647 범위의 정수를 저장하고 처리하기 위해서는
+int 형으로 변수를 선언하면 된다.(int 로 선언하고 %d로 받고 출력)
+
+하지만 이 범위를 넘어가는 정수를 저장하기 위해서는
+보다 큰 범위를 저장할 수 있는 다른 데이터형을 사용해야 정상적으로 저장시킬 수 있다.
+
+unsigned int 데이터형을 사용하면 0 ~ 4294967295 범위의 정수를 저장할 수 있다.
+
+
+#include <stdio.h>
+
+int main()
+{
+	int a=2147483647;
+	printf("%d",a+1);           //a+1때문에 오버플로우가 일어남(int에선 2147483648입력 불가) 
+	return 0;
+}
+출력 -2147483648
+--------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+	int a=-2147483648;
+	printf("%d",a-1);           //a-1때문에 언더플로우가 일어남(int에선 -2147483649입력 불가) 
+	return 0;
+}
+출력  2147483647
+--------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+	unsigned int a=2147483648;       //언사인드로 오버플로우 방지 
+	printf("%u",a);                   //unsigned 써줄때 "%u"써줘야(%d 아님) 
+	return 0;
+}
+2147483648
+--------------------------------
+
+1028문제풀이
+#include <stdio.h>
+
+int main()
+{
+	unsigned int a;       //언사인드로 오버플로우 방지 
+	scanf("%u",&a);
+	printf("%u",a);                   //unsigned 써줄때 "%u"써줘 야(%d 아님) 
+	return 0;
+}
+4294967295
+4294967295
+--------------------------------
+
+
+
+//1029
+실수 1개 입력받아 그대로 출력하기2(설명)
+실수 1개를 입력받아 그대로 출력해보자.
+(단, 입력되는 실수의 범위는 +- 1.7*10-308 ~ +- 1.7*10308 이다.)
+https://codeup.kr/problem.php?id=1029
+https://www.youtube.com/watch?v=cUDSe44sMQw&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=27
+
+참고
+float 데이터형을 사용하면 +- 3.4*10-38 ~ +- 3.4*1038 범위의 실수를 저장할 수 있다.
+(float 로 선언하고 %f로 입력 받아 출력하면 된다.)
+
+이 범위를 넘어가는(더 작거나 더 큰) 실수를 저장하기 위해서는
+보다 큰 범위를 저장할 수 있는 다른 데이터형을 사용해야 정상적으로 저장시킬 수 있다.
+double은 더 정확하게 저장할 수 있지만, float보다 2배의 저장 공간이 필요하다.
+
+double 데이터형을 사용하면
++- 1.7*10-308 ~ +- 1.7*10308 범위의 실수를 저장할 수 있다.
+
+참고
+%.11lf 를 사용하면 소수점 이하 11자리까지 출력된다.
+
+
+풀이
+#include <stdio.h>
+
+int main()
+{
+	double a;
+	scanf("%lf", &a);
+	printf("%.11lf", a);
+
+    return 0;
+}
+3.14159265359785
+3.14159265360
+--------------------------------
