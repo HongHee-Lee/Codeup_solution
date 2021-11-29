@@ -746,4 +746,31 @@ unsigned int 정수자리 2배로 크게 그러나 -못사용
 //1031(10진 정수 1개 입력받아 8진수로 출력하기(설명))
 https://codeup.kr/problem.php?id=1031
 https://www.youtube.com/watch?v=wQOSXka4J8U&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=29
+2,8,10,16진수 서로간 변환(위 주소 참고)
+ 
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	printf("%o", n);
+	
+	
+	return 0;
+ } 
+ 
+ 
+ //1032
+ 10진 정수 입력받아 16진수로 출력하기1(설명)
+ https://codeup.kr/problem.php?id=1032
+ https://www.youtube.com/watch?v=8aw1kHkNn1w&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=31
+ 
+ 16진수(hexa decimal)
+ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
+ 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11
+ 
+ 
+ 
+ 
  
