@@ -953,3 +953,167 @@ int main()
 //1041 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)
 https://codeup.kr/problem.php?id=1041
 https://www.youtube.com/watch?v=OflrsTp3IkY&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=40
+
+
+#include <stdio.h>
+
+int main() 
+{
+	char a;
+	scanf("%c",&a);
+	printf("%c", a+1);
+	return 0;
+}
+
+a
+b
+--------------------------------
+
+//1042
+1042 : [기초-산술연산] 정수 2개 입력받아 나눈 몫 출력하기(설명)
+https://codeup.kr/problem.php?id=1042
+https://www.youtube.com/watch?v=W-mid052sJE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=41
+
+정수 2개(a, b) 를 입력받아 a를 b로 나눈 몫을 출력해보자.
+단, -2147483648 <= a <= b <= +2147483647, b는 0이 아니다.
+
+참고
+C언어에서 정수/정수 연산의 결과는 정수(몫)로 계산된다.
+실수/정수, 정수/실수, (float)정수/정수, 정수/(float)정수 등의 연산 결과는 실수 값으로 계산된다.
+
+(float)(정수/정수)는 정수/정수의 결과인 정수 값을 실수형(float)로 바꾸는 것으로,
+계산 결과인 정수 값이 실수 형태로 변환되는 것이니 주의해야 한다.
+
+정수/실수 계산결과가 자동으로 실수형으로 바뀌는 것을 묵시적 (데이터)형변환이라고 하고,
+어떤 값이나 결과의 데이터형을 강제로 바꾸는 것을 명시적 (데이터)형변환이라고 한다.
+
+int a;
+scanf("%d", &a);
+printf("%f", (float)a);
+
+와 같이 실행하면, 정수로 저장되어 있는 값을 실수형(float)으로 명시적으로 변환하여 출력한다.
+
+
+
+#include <stdio.h>
+
+int main() 
+{
+	int a,b;
+	scanf("%d %d", &a, &b);
+	printf("%f", (float)a/b);
+	
+	return 0;
+}
+6 5
+1.200000
+--------------------------------
+
+
+
+#include <stdio.h>
+
+int main() 
+{
+	int a,b;
+	scanf("%d %d", &a, &b);
+	printf("%d %d", a/b);
+	
+	return 0;
+}
+6 5
+1
+--------------------------------
+
+
+
+
+//1043
+https://codeup.kr/problem.php?id=1043
+https://www.youtube.com/watch?v=_IDf-lPu4n0&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=42
+
+참고
+C언어에서 정수%정수 연산의 결과는 나눈 나머지로 계산된다.
+
+% 연산자(modulus, mod 연산) 수학자 가우스가 생각해낸 연산으로,
+어떤 정수를 다른 정수로 나누고 난 후 남는 나머지를 계산하는 연산이다.
+
+단, 음(-)이 아닌 정수에 대해서만 연산된다.
+
+
+#include <stdio.h>
+
+int main() 
+{
+	int a,b;
+	scanf("%d %d", &a, &b);
+	printf("%d", a%b);                    //%  나머지 구하기
+	
+	return 0;
+}
+10 3
+1
+--------------------------------
+
+
+//1044
+1044 : [기초-산술연산] 정수 1개 입력받아 1 더해 출력하기(설명)
+https://codeup.kr/problem.php?id=1044
+https://www.youtube.com/watch?v=_IDf-lPu4n0&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=42
+
+++a, --a, a++, a-- 와 같이 어떤 변수의 앞이나 뒤에 붙여
+변수에 저장되어있는 값을 1만큼 더하거나 빼주는 연산자를 증감연산자라고 한다.
+
+
+#include <stdio.h>
+
+int main() 
+{
+	long long int a;
+	scanf("%lld", &a);
+	printf("%lld\n", --a);            //먼저빼기  
+	printf("%lld",a);
+	return 0;
+}
+5
+4
+4
+--------------------------------
+
+#include <stdio.h>
+
+int main() 
+{
+	long long int a;
+	scanf("%lld", &a);
+	printf("%lld\n", a--);            //나중 빼기  
+	printf("%lld",a); 
+	return 0;
+}
+5
+5
+4
+--------------------------------
+
+
+//1045 : [기초-산술연산] 정수 2개 입력받아 자동 계산하기)
+https://codeup.kr/problem.php?id=1045
+https://www.youtube.com/watch?v=ATqQ_UnVR6c&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=44
+
+
+#include <stdio.h>
+
+int main()
+{
+	int a,b;
+	scanf("%d %d", &a,&b);
+	printf("%lld\n", a+b);
+	printf("%lld\n", a-b);
+	printf("%lld\n", a*b);
+	printf("%lld\n", a/b);
+	printf("%lld\n", a%b);
+	printf("%.2llf", (float)a/b);
+	return 0;	
+} 
+
+합, 차, 곱, 몫, 나머지, 나눈 값
