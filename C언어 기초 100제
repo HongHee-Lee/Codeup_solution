@@ -1620,3 +1620,22 @@ int main()
 3 5
 1
 --------------------------------
+
+
+1061 : [기초-비트단위논리연산] 비트단위로 OR 하여 출력하기(설명)
+https://codeup.kr/problem.php?id=1061
+https://www.youtube.com/watch?v=HCtIZTJmIi4&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=60
+
+
+#include <stdio.h>
+
+int main()
+{
+	int a,b;
+	scanf("%d %d", &a, &b);
+	printf("%d", a|b);
+	return 0;
+}
+3 5
+7
+--------------------------------
