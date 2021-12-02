@@ -1828,3 +1828,216 @@ int main()
 1066 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝/홀 출력하기(설명)
 https://codeup.kr/problem.php?id=1066
 https://www.youtube.com/watch?v=U8ve4BJC2oE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=65
+
+
+if else 써보란문제인데
+if else 안쓴 내 코드
+
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	scanf("%d %d %d", &a, &b, &c);
+	printf("%s\n", a%2==0 ? "even" : "odd");                  //printf("%s\n", a%2==0 ? "even" : "odd");
+	printf("%s\n", b%2==0 ? "even" : "odd");
+	printf("%s", c%2==0 ? "even" : "odd");
+	return 0;
+}
+1 2 8
+odd
+even
+even
+--------------------------------
+
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	scanf("%d %d %d", &a, &b, &c);
+
+	if(a%2==0) {printf("%s\n", "even");}                	//if(a%2==0) {printf("%s\n", "even");}
+	else {printf("%s\n", "odd");}	                        //else {printf("%s\n", "odd");}
+	if(b%2==0) {printf("%s\n", "even");}
+	else {printf("%s\n", "odd");}
+	if(c%2==0) {printf("%s", "even");}
+	else {printf("%s", "odd");}
+
+	return 0;
+}
+
+
+
+
+
+1067 : [기초-조건/선택실행구조] 정수 1개 입력받아 분석하기(설명)
+https://codeup.kr/problem.php?id=1067
+https://www.youtube.com/watch?v=U8ve4BJC2oE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=66
+
+
+출력
+입력된 정수에 대해
+첫 줄에 minus 나 plus 를 출력하고,
+두 번째 줄에 odd 나 even 을 출력한다.
+
+중첩 (nested) 사용하지 않은 코드
+
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+
+	printf("%s\n", a>0 ? "plus":"minus");
+	printf("%s\n", a%2==0 ? "even" : "odd");
+	return 0;
+}
+
+
+
+중첩 사용한 코드(if 안에 if) 내코드
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	
+	if(a>0)
+	{
+	printf("%s\n", "plus");
+		if(a%2==0){printf("%s", "even");}
+		else{printf("%s","odd");}
+	}
+	else
+	{
+		printf("%s\n", "minus");
+		if(a%2==0){printf("%s", "even");}
+		else{printf("%s","odd");}
+	}
+	return 0;
+}
+-2147483648
+minus
+even
+--------------------------------
+
+
+
+선생님 코드
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+
+	if(a>0) printf("%s\n", "plus");
+	else printf("%s\n", "minus");
+	
+	if(a%2==0) printf("%s", "even");
+	else printf("%s", "odd"); 
+	return 0;
+}
+-2147483648
+minus
+even
+--------------------------------
+
+
+선생님 코드 2
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+
+	if(a<0) 
+	{
+		if(a%2==0) {printf("%s", "minus\neven");}
+		else {printf("%s", "minus\nodd");}
+	}
+	else
+	{
+		if(a%2==0) {printf("%s", "plus\neven");}
+		else {printf("%s", "plus\nodd");}
+	}
+	return 0;
+}
+75
+plus
+odd
+--------------------------------
+
+
+
+
+
+
+1068 : [기초-조건/선택실행구조] 정수 1개 입력받아 평가 출력하기(설명)
+https://codeup.kr/problem.php?id=1068&rid=0
+https://www.youtube.com/watch?v=Z4NW36bFLAQ&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=67
+
+점수(정수, 0 ~ 100)를 입력받아 평가를 출력해보자.
+
+
+평가 기준
+점수 범위 : 평가
+ 90 ~ 100 : A
+ 70 ~   89 : B
+ 40 ~   69 : C
+   0 ~   39 : D
+로 평가되어야 한다.
+
+
+순수 내코드
+
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	
+	if(a>=90 and a<=100)
+	{printf("A");}
+	else{
+		if(a>=70 and a<=89){printf("B");}
+		else
+			{
+			if(a>=40 and a<=69){printf("C");}
+			else
+				{
+				if(a>=0 and a<=39){printf("D");}
+				}
+			}
+		}
+	
+	return 0;
+}
+73
+B
+--------------------------------
+
+
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	
+	if(a>=90 and a<=100){printf("A");}
+	else if(a>=70 and a<=89){printf("B");}
+	else if(a>=40 and a<=69){printf("C");}
+	else if(a>=0 and a<=39){printf("D");}
+	
+	return 0;
+}
+73
+B
+--------------------------------
+
+
+
+
+
+
+1069 : [기초-조건/선택실행구조] 평가 입력받아 다르게 출력하기(설명)
+https://codeup.kr/problem.php?id=1069
+https://www.youtube.com/watch?v=GnZ0f1qk0NE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=68
