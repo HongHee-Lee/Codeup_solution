@@ -1778,9 +1778,53 @@ int main()
 	int a;
 	scanf("%d", &a);
 	if(a%2==0);
+	{
+	printf("홀수입니다");
+	}
 	return 0;
 }
 
 1 
 홀수입니다.
 --------------------------------
+
+
+
+#include <stdio.h>
+int main() 
+{
+	int a;
+	scanf("%d", &a);
+	printf(a%2==0 ? "짝수입니다.": "홀수입니다.");
+	return 0;
+}
+2
+짝수입니다.
+--------------------------------
+
+
+
+
+
+#include <stdio.h>
+int main() 
+{
+	int a,b,c;
+	scanf("%d %d %d", &a, &b, &c);
+	if(a%2==0) {printf("%d\n",a);}
+	if(b%2==0) {printf("%d\n",b);}
+	if(c%2==0) {printf("%d\n",c);}
+	return 0;
+}
+1 2 4
+2
+4
+
+--------------------------------
+
+
+
+
+1066 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝/홀 출력하기(설명)
+https://codeup.kr/problem.php?id=1066
+https://www.youtube.com/watch?v=U8ve4BJC2oE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=65
