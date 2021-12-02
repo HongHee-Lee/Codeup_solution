@@ -2022,8 +2022,8 @@ int main()
 	int a;
 	scanf("%d", &a);
 	
-	if(a>=90 and a<=100){printf("A");}
-	else if(a>=70 and a<=89){printf("B");}
+	if(a>=90 and a<=100){printf("A");}                            //if(a>=90 and a<=100){printf("A");}
+	else if(a>=70 and a<=89){printf("B");}                        //else if(a>=70 and a<=89){printf("B");}    //elif의 사용!
 	else if(a>=40 and a<=69){printf("C");}
 	else if(a>=0 and a<=39){printf("D");}
 	
@@ -2041,3 +2041,146 @@ B
 1069 : [기초-조건/선택실행구조] 평가 입력받아 다르게 출력하기(설명)
 https://codeup.kr/problem.php?id=1069
 https://www.youtube.com/watch?v=GnZ0f1qk0NE&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=68
+
+
+case 사용!!!!!!
+
+
+참고
+조건/선택문을 복합적으로 구성해 출력할 수도 있지만,
+
+switch(정수값)
+{
+  case 'A': //문자 'A'가 정수값 65('A'의 아스키 값)로 저장되기 때문에 가능하다.
+    ...;
+    break;
+  case 'B':
+    ...;
+    break;
+  case 'C':
+    ...;
+    break;
+  default:
+    ...;
+}
+
+위와 같은 switch( ) ... case... break; 제어문을 사용할 수 있다.
+
+** break; 를 사용하지 않으면 이후의 명령들도 계속 실행된다.
+default: 는 제시된 case 를 제외한 나머지 모든 경우에 실행된다.
+switch( ) 에 주어지는 값은 “정수"값만 가능하며,
+문자도 아스키코드 정수값이기 때문에 가능하다.
+
+
+
+A : best!!!
+B : good!!
+C : run!
+D : slowly~
+
+#include <stdio.h>
+int main()
+{
+	char a;
+	scanf("%c", &a);
+	switch(n)                                            //switch(n)
+	{
+	case'A':printf("best!!!"); break;
+	case'B':printf("good!!"); break;
+	case'C':printf("run!"); break;
+	case'D':printf("slowly~"); break;                    //case'D':printf("slowly~"); break;        
+	default:printf("what?"); break;                      //default:printf("what?"); break;
+	}
+
+	return 0;
+}
+C
+run!
+--------------------------------
+
+
+
+
+1070 : [기초-조건/선택실행구조] 월 입력받아 계절 출력하기(설명)
+https://codeup.kr/problem.php?id=1070
+https://www.youtube.com/watch?v=iv0OVmV2_4U&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=69
+
+월이 입력될 때 계절 이름이 출력되도록 해보자.
+
+예
+월 : 계절 이름
+12, 1, 2 : winter
+  3, 4, 5 : spring
+  6, 7, 8 : summer
+  9, 10, 11 : fall
+
+참고
+swtich( ).. case ... break; 제어문에서
+break;를 제거하면 멈추지 않고 다음 명령이 실행되는 특성을 이용할 수 있다.
+
+switch(a)
+{
+  ...
+  case 3:
+  case 4:
+  case 5:
+    printf("spring");
+  break;
+  ...
+}
+로 작성하면, 3, 4, 5가 입력되었을 때 모두 "spring"이 출력된다.
+
+** 12, 1, 2 는 어떻게 처리해야 할지 여러 가지로 생각해 보아야 한다.
+
+
+
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    switch(n)
+    {
+	case 12:
+	case 1:
+	case 2:
+	    printf("winter");
+	    break;
+
+	case 3:
+	case 4:
+	case 5:
+	    printf("spring");
+	    break;
+
+	case 6:
+	case 7:
+	case 8:
+	    printf("summer");
+	    break;
+
+	case 9:
+	case 10:
+	case 11:
+	    printf("fall");
+	    break;
+	
+	default:
+	    printf("잘못된 입력입니다.");
+    }
+    return 0;
+}
+
+7
+summer
+--------------------------------
+
+
+
+
+
+
+1071 : [기초-반복실행구조] 0 입력될 때까지 무한 출력하기1(설명)
+https://codeup.kr/problem.php?id=1071
+https://www.youtube.com/watch?v=FP4dAuJF0bI&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=70
