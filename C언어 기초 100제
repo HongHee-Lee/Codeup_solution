@@ -2388,6 +2388,32 @@ int main()
 	while(n!=0)
 	{
 		scanf("%d", &n);
+		if(n==0)break;                     //	if(n==0)break;       while문에서 if break를 쓰면 빠져나갈수있다.
+		printf("%d\n", n);
+
+	}
+	return 0;
+}
+7 4 2 3 0 1 5 6 9 10 8
+7
+4
+2
+3
+
+--------------------------------
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int n=1;
+
+	while(1)                              //	while(1)   이렇게 할거면 반드시 break 있어야 
+	{
+		scanf("%d", &n);
 		if(n==0)break;
 		printf("%d\n", n);
 
@@ -2401,3 +2427,13 @@ int main()
 3
 
 --------------------------------
+
+
+
+
+
+
+
+1074 : [기초-반복실행구조] 정수 1개 입력받아 카운트다운 출력하기1(설명)
+https://codeup.kr/problem.php?id=1074
+https://www.youtube.com/watch?v=N4KJFRksZQc&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=73
