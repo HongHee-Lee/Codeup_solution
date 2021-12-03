@@ -2877,8 +2877,15 @@ int main()
 		sum+=i;
 
 	}
-	printf("%d",i-1);
+	printf("%d",i-1);                       //왜 i아니라 i-1일까???
 	
 	return 0;
 }
 
+
+
+
+
+1081 : [기초-종합] 주사위를 2개 던지면?(설명)
+https://codeup.kr/problem.php?id=1081
+https://www.youtube.com/watch?v=zFziwS3Vb5g&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=82
