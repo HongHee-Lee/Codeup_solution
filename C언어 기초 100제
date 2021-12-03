@@ -2603,3 +2603,193 @@ for((반복전 실행/준비내용); (조건 검사 내용); (한번 실행한 �
 
 while( ) {...}, do {...} while( ); 과 다르게
 반복을 위한 초기화/준비, 조건검사, 반복 후 증감 등을 한 번에 작성할 수 있다.
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int i=0, n;
+	scanf("%d", &n);
+	
+	for(i=0;i<=n;i++)  {printf("%d\n", i);}                // for(i=0;i<=n;i++)    for 문에서 내용들 ';' 으로 구분 유의
+	return 0;
+}
+4
+0
+1
+2
+3
+4
+
+--------------------------------
+
+
+
+
+
+1078 : [기초-종합] 짝수 합 구하기(설명)
+https://codeup.kr/problem.php?id=1078
+https://www.youtube.com/watch?v=Ot8godCzXJo&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=77
+
+참고
+while( ) {...}, do {...} while( );, for(...; ...; ...) {...} 등의 반복문은 형태만 다르
+고, 똑같은 성능을 발휘한다. 필요에 따라 편리한 것으로 골라 사용하면 된다.
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int sum=0,i,n;
+	scanf("%d", &n);
+	for (i=0; i<=n; i++)                   //선생님은 i=1이라고 하셨는데 i=0이라고 해도 무방한듯
+	{
+		if(i%2==0){sum+=i;}              //{sum+=i;} 에서 세미콜론 위치 틀렸었음 
+	}                                    //sum++i; 이런 구문은 없음 
+	printf("%d", sum);    
+	return 0;
+}
+5
+6
+--------------------------------
+
+
+while문을 사용한 짝수 합 구하기
+
+#include <stdio.h>
+
+int main()
+{
+	int sum=0;
+	int i=1, n;
+	scanf("%d", &n);
+	while(i<=n)
+	{
+		if(i%2==0) sum = sum+i;
+		i=i+1;
+	 } 
+	printf("%d", sum);
+	return 0;
+}
+5
+6
+--------------------------------
+
+
+do while문을 이용한 구문
+#include <stdio.h>
+
+int main()
+{
+	int sum=0;
+	int i=1, n;
+	scanf("%d", &n);
+	do
+	{
+		if(i%2==0) sum = sum+i;
+		i=i+1;
+	 } 
+	while(i<=n);
+	printf("%d", sum);
+	return 0;
+}
+5
+6
+--------------------------------
+
+
+
+
+1079 : [기초-종합] 원하는 문자가 입력될 때까지 반복 출력하기
+https://codeup.kr/problem.php?id=1079
+https://www.youtube.com/watch?v=oUtf3Un3Zos&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=78
+
+#include <stdio.h>
+
+int main()
+{
+	char c;
+	while(c!='q')
+	{
+		scanf("%c", &c);
+		printf("%c", c);
+	}
+	return 0;
+}
+x b k d l q g a c
+x b k d l q                                        //\n 써주면 표현에러 라고 뜸.. 왠지?
+--------------------------------
+
+
+
+
+또 if break 이용한 코드(결과는 같음)
+
+#include <stdio.h>
+
+int main()
+{
+	char c;
+	while(1)
+	{
+		scanf("%c", &c);
+		printf("%c", c);
+		if(c=='q') break;
+	}
+	return 0;
+}
+
+
+
+
+
+꿀팁 공부
+
+#include <stdio.h>
+
+int main()
+{
+	char c;
+	while(1)
+	{
+		scanf("%c", &c);                 // "%c" 를 공백추가해서 "%c "로 하면 아래 결과 문제 해결가능 
+		printf("%c\n", c);
+		if(c=='q') break;
+	}
+	return 0;
+}
+
+
+//"%c" 로했을때 결과
+x b k d l q g a c
+x
+
+b
+
+k
+
+d
+
+l
+
+q
+
+--------------------------------
+
+
+//"%c " 로했을때 결과
+x b k d l q g a c
+x
+b
+k
+d
+l
+q
+
+--------------------------------
+
+
