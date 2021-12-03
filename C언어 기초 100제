@@ -2353,7 +2353,14 @@ int main()
 	}
 	return 0;
 }
- 
+5 4 3 2 1
+5
+4
+3
+2
+1
+
+--------------------------------
  
 
 
@@ -2437,3 +2444,162 @@ int main()
 1074 : [기초-반복실행구조] 정수 1개 입력받아 카운트다운 출력하기1(설명)
 https://codeup.kr/problem.php?id=1074
 https://www.youtube.com/watch?v=N4KJFRksZQc&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=73
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	
+	while(n!=0){
+	printf("%d\n", n);
+	n--;                                            //n=n-1; 과 같음(n--;)
+	}
+}
+5
+5
+4
+3
+2
+1
+
+--------------------------------
+
+
+1075 : [기초-반복실행구조] 정수 1개 입력받아 카운트다운 출력하기2(설명)
+https://codeup.kr/problem.php?id=1075
+https://www.youtube.com/watch?v=KDqf9hvWC-4&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=74
+
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	
+	while(n!=0){                        //=  while(n > 0){       //=  while(n >= 1){
+	
+	n--;
+	printf("%d\n", n);                   //여기 두줄은 printf("%d\n", --n);  이 코드로 대체 가능
+	
+	}
+}
+5
+4
+3
+2
+1
+0
+
+--------------------------------
+
+
+
+
+1076 : [기초-반복실행구조] 문자 1개 입력받아 알파벳 출력하기(설명)
+https://codeup.kr/problem.php?id=1076
+
+
+
+
+do while 문 안쓴 순수 내코드
+
+#include <stdio.h>
+
+int main()
+{
+	char t, var='a';
+	scanf("%c", &t);
+	
+	while(var<=t){printf("%c\n",var++);}
+	return 0;
+}
+f
+a
+b
+c
+d
+e
+f
+
+--------------------------------
+
+
+
+
+복합대입연산자
++=, -=, *=, /=, %= ...
+
+아래는 서로 다른 형태이지만 같은 기능을 하는 코드들이다.
+n++;
+n=n+1;
+n+=1;
+
+
+
+do while 문
+do
+{ //코드블록
+  ...
+}while(조건);
+구조는 while( ) { ... } 과 유사한 반복 실행 구조를 만들 수 있는데
+다른 점은 무조건 한 번은 실행된다는 것이다. 마지막에 세미콜론을 반드시 붙여야 한다.    //do while 문은 무조건 한 번은 실행된다(while 문과의 차이점)
+
+예시
+char x, t='a';
+scanf("%c", &x);
+do
+{
+  printf("%c ", t);
+  t+=1; //t+=1; 는 t=t+1과 같은 의미이다.
+}while(t<'z'+1); //의미 : t의 값이 'z'보다 작은 동안 반복된다.
+
+
+
+
+do while문 공부한 순수? 내코드
+#include <stdio.h>
+
+int main()
+{
+	int c, t='a';
+	scanf("%c", &c);
+	do
+	{
+		printf("%c\n",t++);
+	}
+	while(t<=c);
+	return 0;
+}
+f
+a
+b
+c
+d
+e
+f
+
+--------------------------------
+
+
+1077 : [기초-반복실행구조] 정수 1개 입력받아 그 수까지 출력하기(설명)
+https://codeup.kr/problem.php?id=1077
+https://www.youtube.com/watch?v=aVKC22g-nwM&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=75
+https://blog.naver.com/gre******/222586174816                                           //내불로그 참고
+
+
+while do while 마지막으로 for문
+
+참고
+for((반복전 실행/준비내용); (조건 검사 내용); (한번 실행한 후 처리할 작업))
+{ //코드블록
+  ...
+}
+구조는 while( ) {...}, do {...} while( ); 구조와 같이
+어떤 작업을 반복적으로 수행할 때 가장 일반적으로 많이 사용하는 구조이다.
+
+while( ) {...}, do {...} while( ); 과 다르게
+반복을 위한 초기화/준비, 조건검사, 반복 후 증감 등을 한 번에 작성할 수 있다.
