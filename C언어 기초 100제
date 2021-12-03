@@ -2793,3 +2793,39 @@ q
 --------------------------------
 
 
+
+
+
+if else 사용한 코드
+
+#include <stdio.h>
+
+int main()
+{
+	char c;
+	while(1)
+	{
+		scanf("%c ", &c);                 // "%c" 를 공백추가해서 "%c "로 하면 아래 결과 문제 해결가능 
+		
+		if(c!='q')
+		{
+			printf("%c\n", c);
+		}
+		else
+		{
+			printf("%c\n", c);
+			return 0;                                       //return 위치 유심히 보기 !!!
+
+		}
+	}
+}
+
+
+
+
+
+
+
+1080 : [기초-종합] 언제까지 더해야 할까?
+https://codeup.kr/problem.php?id=1080
+https://www.youtube.com/watch?v=mEjbrE5m11s&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=81
