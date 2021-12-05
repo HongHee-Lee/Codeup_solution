@@ -3198,3 +3198,248 @@ int main()
 https://codeup.kr/problem.php?id=1087
 https://www.youtube.com/watch?v=ebPgBbaFwDI&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=89
 
+1, 2, 3 ... 을 순서대로 계속 더해나갈 때,
+그 합이 입력한 정수보다 작을 동안만 계속 더하는 프로그램을 작성해보자.
+
+즉, 1부터 n까지 정수를 계속 더한다고 할 때,
+어디까지 더해야 입력한 수보다 같거나 커지는지 알아보고자 하는 문제이다.
+
+예를 들어 57을 입력하면
+1+2+3+...+8+9+10=55에 다시 11을 더해 66이 될 때,
+그 값 66이 출력되어야 한다.
+
+참고
+조건문이나 반복문의 코드블록 안에서 break;가 실행되면
+가장 가까운 반복 코드블록 구역의 밖으로 빠져나간다.
+
+
+예시
+int n, i, s=0;
+scanf("%d", &n);
+for(i=1; ; i++) //for 반목문에서 가운데의 조건이 빠진 경우 무한 반복된다.
+{
+  s+=i;
+  if(s>=n)
+    break; //참이면, 가장 가까운 반복 코드블록의 밖으로 빠져나간다.
+} //break; 가 실행되면 반복을 중단하고 여기로 빠져 나온다.
+printf("%d", s);
+
+무한 반복이 되는 코드는
+while(1) {...}, do {...}while(1); 등도 가능하다.
+0이 아니면 모두 참(true)으로 인식되기 때문이다.
+
+
+1, 2, 3, 4, 5 ... 순서대로 계속 더해가다가, 그 합이 입력된 정수보다 커지거나 같아지는 경우,
+그때까지의 합을 출력한다.
+
+
+내답 한번에 정답!!!!!!!  (lucky 7 lucky 7 lucky 7 lucky 7 lucky 7 lucky 7 lucky 7) * 7 * 무한
+#include <stdio.h>
+
+int main()
+{
+	int i, s=0, n;
+	scanf("%d", &n);
+	
+	for(i=1; s<n; i++)                   // 쌤팁 for(i=1;;i++)로 해도 잘돌아간대!! 
+	{
+		s+=i;
+		if (s>=n) printf("%d", s);
+	}
+}
+57
+66
+--------------------------------
+
+
+쌤답
+#include <stdio.h>
+
+int main()
+{
+	int i, s=0, n;
+	scanf("%d", &n);
+	
+	for(i=1;; i++)                   // 쌤팁 for(i=1;;i++)로 해도 잘돌아간대!! 단 if break로 끊어줘야
+	{
+		s+=i;
+		if (s>=n) break;      //단 break로 끊어줘야 (내코드에 break없이 for(i=1;;i++)로 돌리니 끝없이 결과나옴..
+	}
+	 printf("%d", s);
+}
+
+
+
+while문으로 짠답! 정답!!!! 나혼자 품!!!!
+#include <stdio.h>
+
+int main()
+{
+	int i=1, s=0, n;
+	scanf("%d", &n);
+	
+	while(1)
+	{
+	s+=i;
+	i+=1;
+	if(s>=n) break;
+	}
+	 printf("%d", s);
+}
+
+
+
+
+do while문으로 짜기!!!
+#include <stdio.h>
+
+int main()
+{
+	int i=1, s=0, n;
+	scanf("%d", &n);
+	
+	do
+	{
+	s+=i;
+	i+=1;
+	if(s>=n) break;
+	}
+	while(1);
+	 printf("%d", s);
+}
+
+
+
+
+
+1088 : [기초-종합] 3의 배수는 통과?(설명)                           
+https://codeup.kr/problem.php?id=1088
+https://www.youtube.com/watch?v=nF-8Zd1TbYk&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=91
+
+1부터 입력한 정수까지 1씩 증가시켜 출력하는 프로그램을 작성하되,
+3의 배수인 경우는 출력하지 않도록 만들어보자.
+
+예를 들면,
+1 2 4 5 7 8 10 11 13 14 ...
+와 같이 출력하는 것이다.
+
+
+참고
+반복문 안에서 continue;가 실행되면 그 아래의 내용을 건너뛰고, 다음 반복을 수행한다.                        //continue;사용법
+즉, 다음 반복으로 넘어가는 것이다.
+
+예시
+for(i=1; i<=n; i++) //1부터 시작해 n까지 1씩 증가시키면서 반복한다.
+{
+  if(i%2==0)
+    continue; //짝수라면? 아래 부분은 건너뛰고! 계속~
+  printf("%d ", i); //결국 짝수가 아닐 때에만 출력된다.
+}
+
+
+#include <stdio.h>
+
+int main()
+{
+	int i,n;
+	scanf("%d", &n);
+	
+	for (i=0; i<=n; i++)
+	{
+		if(i%3==0) 
+			continue;
+		else
+		printf("%d ", i);
+		
+	}
+
+	return 0;
+}
+10
+1 2 4 5 7 8 10
+--------------------------------
+
+
+
+
+
+1089 : [기초-종합] 수 나열하기1
+https://codeup.kr/problem.php?id=1089
+https://www.youtube.com/watch?v=4_w3XHyuwBo&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=92
+
+
+등차수열 계산(순수내코드 정답!!!)
+#include <stdio.h>
+
+int main()
+{
+	int a,d,n;
+	scanf("%d %d %d", &a,&d,&n);
+	printf("%d", a+d*(n-1));
+	
+	return 0;
+}
+1 3 5
+13
+--------------------------------
+
+
+
+선생님과 함께 컴퓨터 계산스럽게 등차수열 계산하는 코드
+#include <stdio.h>
+
+int main()
+{
+	int a,d,n;
+	scanf("%d %d %d", &a,&d,&n);
+	for(int i=1;i<n;i++){a+=d;}       //for문으로 n-1번 일일이 더해줌
+	printf("%d", a);
+	
+	return 0;
+}
+
+
+
+
+
+1090 : [기초-종합] 수 나열하기2
+https://codeup.kr/problem.php?id=1090
+https://www.youtube.com/watch?v=EWSO_iX325s&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=93
+
+시작 값(a), 등비의 값(r), 몇 번째 인지를 나타내는 정수(n)가
+공백을 두고 입력된다.(모두 0 ~ 10)
+
+등비수열 계산
+
+#include <stdio.h>
+
+int main()
+{
+	int a,r,n;
+	scanf("%d %d %d", &a, &r, &n);
+	
+	for(int i=1; i<n;i++){a*=r;}
+	printf("%d", a);
+	return 0;
+}
+
+요러케 하면 코드업에서 오버플로우 뜸
+(데브c++에서는 정상결과 나옴)
+그래서 long long int 바꿔줘야됨.(선생님 말씀)
+실제론 long int로만 바꿔도 코드업에서 정상으로 돌아감
+아래는 long int로 바꾼 코드
+
+#include <stdio.h>
+
+int main()
+{
+	long int a,r,n;
+	scanf("%ld %ld %ld", &a, &r, &n);
+	
+	for(int i=1; i<n;i++){a*=r;}
+	printf("%ld", a);
+	return 0;
+}
+2 3 7
+1458
+--------------------------------
