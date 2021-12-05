@@ -3028,7 +3028,7 @@ int main()
 	int i, n;
 	scanf("%d", &n);
 	
-	for(i=1;i<=n;i++);
+	for(i=1;i<=n;i++);                   //for() 뒤에 ; 떼기!!!
 	printf("%d", i);         //이부분 else로 처리 아이디어!
 	if(i%3=0){                                     //i%3=0   == 이콜 2개 조심
 	
@@ -3043,6 +3043,7 @@ int main()
 
 선생님 참고 답
 
+
 #include <stdio.h>
 
 int main()
@@ -3050,13 +3051,150 @@ int main()
 	int i, n;
 	scanf("%d", &n);
 	
-	for(i=1;i<=n;i++);
-	{
-	
-		if(i%3==0)	printf("X"); 
-	
-		else printf("%d", i);
-	}
+	for(i=1; i<=n; i++)                    //for() 뒤에 ;붙이는 바람에 한참 헤멤!! 주의ㅏ!!! 
+	{if(i%3==0) printf("X "); 
+	else printf("%d ", i);}
 	return 0;
 } 
-실행안됨 
+
+9
+1 2 X 4 5 X 7 8 X
+--------------------------------
+
+
+
+
+
+
+1084 : [기초-종합] 빛 섞어 색 만들기(설명)
+https://codeup.kr/problem.php?id=1084
+https://www.youtube.com/watch?v=ctQqD4IA_88&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=86
+
+
+#include <stdio.h>
+
+int main()
+{
+	int i,j,k,count=0;
+	int r,g,b;
+		scanf("%d %d %d", &r,&g,&b);
+	for(i=0; i<=r-1; i++)
+		for (j=0; j<=g-1; j++)
+			for(k=0; k<=b-1; k++)
+				{
+				
+				printf("%d %d %d\n", i,j,k);
+				count++;                               //count=count+1; //count+=1;
+			}
+	printf("%d",count);
+	
+	return 0;
+} 
+2 2 2
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+8
+--------------------------------
+
+
+
+
+
+1085 : [기초-종합] 소리 파일 저장용량 계산하기(설명)
+https://codeup.kr/problem.php?id=1085
+https://www.youtube.com/watch?v=5hDIMarsiDk&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=87
+
+
+내 답
+#include <stdio.h>
+
+int main()
+{
+	float h,b,c,s;
+	scanf("%f %f %f %f", &h, &b,&c,&s);
+	printf("%.1f MB",(h*b*c*s)/8/1024/1024);
+	return 0;
+}
+44100 16 2 10
+1.7 MB
+--------------------------------
+
+선생님답(위랑 결과 같음)
+#include <stdio.h>
+
+int main()
+{
+	long long int h,b,c,s;
+	double r=0;          //엄청 큰 소수점 사용?? double!     //r은 문제에서 말한 raw값 
+	
+	scanf("%lld %lld %lld %lld", &h,&b,&s,&c);
+	r=h*b*s*c;
+	r=r/8/1024/1024;         //이미 r은 double로 되어있음 // double은 lf !!1
+	printf("%.1lf MB",r);
+	return 0;
+}
+
+
+
+
+
+
+
+1086 : [기초-종합] 그림 파일 저장용량 계산하기(설명)
+https://codeup.kr/problem.php?id=1086
+https://www.youtube.com/watch?v=wQUqBc3xHlA&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=88
+
+
+일반적인 1024 * 768 사이즈(해상도)의 각점에 대해
+24비트(rgb 각각 8비트씩 3개)로 저장하려면 1024 * 768 * 24 bit의 저장 용량이 필요하다.
+
+
+내답
+#include <stdio.h>
+
+int main()
+{
+	double w,h,b;
+	scanf("%lf %lf %lf", &w,&h,&b);
+	printf("%.2f MB",(w*h*b)/8/1024/1024);
+	return 0;
+	
+	
+}
+1024 768 24
+2.25 MB
+--------------------------------
+
+
+
+선생님 답
+#include <stdio.h>
+
+int main()
+{
+	int w,h,b;
+	double r;
+	scanf("%d %d %d", &w,&h,&b);             //로 계산해도 무방 %lf %lf %lf
+	r=w*h*b;                     //w*h*b/8/1024/1024 로 계산하면 2.00MB로 뜸 이유는 아직도 모름 
+	r=r/8/1024/1024;
+	printf("%.2lf MB",r);
+	return 0;
+	
+	
+}
+
+
+
+
+
+
+1087 : [기초-종합] 여기까지! 이제 그만~(설명)
+https://codeup.kr/problem.php?id=1087
+https://www.youtube.com/watch?v=ebPgBbaFwDI&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=89
+
