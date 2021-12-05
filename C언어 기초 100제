@@ -3392,7 +3392,7 @@ int main()
 {
 	int a,d,n;
 	scanf("%d %d %d", &a,&d,&n);
-	for(int i=1;i<n;i++){a+=d;}       //for문으로 n-1번 일일이 더해줌
+	for(int i=1;i<n;i++){a+=d;}       //for문으로 n-1번 일일이 더해줌        //for (int i=1; ~~~ 하면 i를 위에서 따로 변수 정의 해줄 필요가 없다.) 
 	printf("%d", a);
 	
 	return 0;
@@ -3418,7 +3418,7 @@ int main()
 	int a,r,n;
 	scanf("%d %d %d", &a, &r, &n);
 	
-	for(int i=1; i<n;i++){a*=r;}
+	for(int i=1; i<n;i++){a*=r;}                      //for (int i=1; ~~~ 하면 i를 위에서 따로 변수 정의 해줄 필요가 없다.) 
 	printf("%d", a);
 	return 0;
 }
@@ -3436,10 +3436,53 @@ int main()
 	long int a,r,n;
 	scanf("%ld %ld %ld", &a, &r, &n);
 	
-	for(int i=1; i<n;i++){a*=r;}
+	for(int i=1; i<n;i++){a*=r;}                              //for (int i=1; ~~~ 하면 i를 위에서 따로 변수 정의 해줄 필요가 없다.) 
 	printf("%ld", a);
 	return 0;
 }
 2 3 7
 1458
 --------------------------------
+
+
+
+
+1091 : [기초-종합] 수 나열하기3
+https://codeup.kr/problem.php?id=1091
+https://www.youtube.com/watch?v=DiRCo5eSrLo&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=94
+
+시작 값(a), 곱할 값(m), 더할 값(d), 몇 번째 인지를 나타내는 정수(n)가
+공백을 두고 입력된다.(a, m, d는 -50 ~ +50, n은 10이하의 자연수)
+
+
+
+#include <stdio.h>
+
+int main()
+{
+
+	long int a,m,d,n;
+	scanf("%ld %ld %ld %ld", &a,&m,&d,&n);
+	
+	for(int i=1;i<n;i++)        //for (int i=1; ~~~ 하면 i를 위에서 따로 변수 정의 해줄 필요가 없다.) 
+	{
+	a*=m;                                   //선생님은 a=a*m+d;로 한줄로 표현
+	a+=d;
+	}
+	printf("%ld", a);
+	
+	return 0;
+}
+
+1 -2 1 8
+-85
+--------------------------------
+
+
+
+
+
+
+1092 : [기초-종합] 함께 문제 푸는 날(설명)
+https://codeup.kr/problem.php?id=1092
+https://www.youtube.com/watch?v=Ols-D_jAnNA&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=95
