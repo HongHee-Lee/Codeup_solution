@@ -3486,3 +3486,45 @@ int main()
 1092 : [기초-종합] 함께 문제 푸는 날(설명)
 https://codeup.kr/problem.php?id=1092
 https://www.youtube.com/watch?v=Ols-D_jAnNA&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=95
+
+
+참, 거짓의 논리값(boolean value)인 불 값을 다루어주는 논리연산자는
+!(not), &&(and), ||(or) 이 있다.
+
+
+
+수학에서 배운 최소공배수를 생각한 사람들도 있을 것이다. 하지만, 정보에서 배우고 경험하는
+정보과학의 세상은 때때로 컴퓨터의 힘을 빌려 간단한 방법으로 해결할 수 있게 한다.
+
+아래의 코드를 읽고 이해한 후 도전해 보자.
+
+day는 날 수, a/b/c는 방문 주기이다.
+...
+day=1;
+while(day%a!=0 || day%b!=0 || day%c!=0) day++; //이게 무슨 의미일까?
+printf(＂%d＂, day);
+...
+
+
+3명이 다시 모두 함께 방문해 문제를 풀어보는 날(동시 가입/등업 후 며칠 후?)을 출력한다.
+
+
+ #include <stdio.h>
+ 
+ int main()
+ {
+ 	int a,b,c,day=1;
+ 	scanf("%d %d %d", &a,&b,&c);
+ 	
+ 	while(day%a!=0|| day%b!=0||day%c!=0) 
+ 	{
+	 day++;
+ 	}
+ 	printf("%d", day);
+ 	
+ 	return 0;
+	 
+ }
+3 7 9
+63
+--------------------------------
