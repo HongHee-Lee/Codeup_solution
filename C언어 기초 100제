@@ -3540,3 +3540,73 @@ https://www.youtube.com/watch?v=HFEp5AIj08o&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygre
 
 1차원 배열 설명
 https://www.youtube.com/watch?v=KKyXkLQWZK4&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=96
+
+
+예시
+int a[100]; //a[0] ~ a[99] 까지 정수를 저장할 수 있는 배열을 만들어라.
+for(i=0; i<100; i++)
+{
+  scanf("%d", &a[i]); // 각각의 방에 순서대로 반복하면서 값을 입력해라.
+}
+
+배열을 사용하기 전에 배열에 들어있는 값을 초기화시키는 것이 좋은데,
+다음과 같은 여러 가지 방법이 있다.
+
+int a[24]={}; //0번부터 23번까지 모두 0으로 초기화된다.
+int a[24]={1,2,3}; //1,2,3 이 순서대로 들어가고 나머지는 모두 0으로 초기화된다.
+int a[3]={1,2,3}; //1,2,3 이 순서대로 저장된다.
+int a[3]={1,2,3,4}; //방을 3개 만들고 값을 4개를 집어넣어라? 오류 발생!
+
+
+문제 해결을 위한 참고 코드
+
+int n, i, t;
+int a[24]={};
+scanf("%d", &n); //개수 입력받기
+for(i=1; i<=n; i++) //개수만큼 입력받기
+{
+  scanf("%d", &t); //읽어서
+  a[t]=a[t]+1; //들어있던 값에 1만큼 더해 다시 저장. a[t]+=1 과 같다.
+}
+for(i=1; i<=23; i++)
+{
+  printf("%d ", a[i]); //1~23 번 배열에 저장되어있는 값 출력하기
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int n, i;
+	int a[24]={};                          //배열 선언 
+
+	
+	scanf("%d", &n);
+		int array[n]={};
+		
+	for(i=0;i<=n-1;i++)
+	{
+	scanf("%d",&array[i]);
+	a[array[i]-1]++;
+	}
+	
+	for(i=0;i<=22;i++)	
+	printf("%d ",a[i]);
+	
+	return 0;
+}
+10
+1 3 2 2 5 6 7 4 5 9
+1 2 1 1 2 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+--------------------------------
+
+
+
+
+
+
+https://codeup.kr/problem.php?id=1094
+1094 : [기초-1차원배열] 이상한 출석 번호 부르기2(설명)
+https://www.youtube.com/watch?v=t_ZZsA5TTt4&list=PLVXWi4DVy7TexhDLSS8L5xEMEOygreQPj&index=98
