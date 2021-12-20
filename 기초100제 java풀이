@@ -11,3 +11,12 @@ https://velog.io/@janeljs/python-codeup-algorithms
 
 츄르 사려고 코딩하는 집사 님 해설
 https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1001%EB%B2%88-1002%EB%B2%88-1003%EB%B2%88-1004%EB%B2%88-1005%EB%B2%88-1006%EB%B2%88-1007%EB%B2%88-1008%EB%B2%88-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
+
+이클립스 기본 사용법(java project 생성후 class 생성까지)
+https://www.youtube.com/watch?v=o692B9K6D28
+
+자동입력
+sout -> ctrl+spacebar = System.out.println();
+
+글꼴, 크기 변경
+window -> preferences -> general -> appearance -> colors and fonts -> text font
