@@ -112,3 +112,63 @@ public class Main{
 
 1010번
 1010번~1013번 해설 : https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1010%EB%B2%88-1011%EB%B2%88-1012%EB%B2%88-1013%EB%B2%88-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
+
+
+-------------------------------------------------------------
+Scanner 공부 (출처 :https://sesetv.tistory.com/28)
+그냥 외우시는 게 가장 좋습니다.
+외우는 방법을 드리자 하면
+Scanner scan = new Scanner(System.in);
+
+int a 와 같이
+Scanner scan = 이렇게 생각해줍시다 
+
+int a = 5 와 같이
+Scanner scan = new (새로운)
+Scanner scan = new Scanner(새로운 스캐너)
+Scanner scan = new Scanner(System.in) = 시스템 안에 (입력)
+
+이런 식으로 외우시면 좋습니다.
+제가 이렇게 외웠거든요 ㅎ
+
+------------------------------------------------------------
+int p1 = scan.nextInt();
+int p2 = scan.nextInt();
+
+그리고 지정되었던 p1과 p2의 숫자를 입력식으로 위처럼 바꾸어줍니다.
+저 공식 또한 외워주셔야 합니다.
+
+ 위에서 Scanner scan = ~~ 이라고 지정하였으니 
+p1 = scan 을 적어주시고
+p1 = scan.nextInt(); 에서 소문자(i). 대문자(I)를 구분하셔야 합니다.
+
+위의 식은 꼭 외워주세요~
+
+------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner scann = new Scanner(System.in);
+		
+		int a =scann.nextInt();                    //nextInt i대문자 조심
+		
+		System.out.println(a);
+
+	}
+}
+
+15
+15
+
+
+
+
+1011번
+https://codeup.kr/problem.php?id=1011
+
+코드해설참고
+https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1010%EB%B2%88-1011%EB%B2%88-1012%EB%B2%88-1013%EB%B2%88-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
