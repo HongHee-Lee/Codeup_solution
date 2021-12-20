@@ -20,3 +20,95 @@ sout -> ctrl+spacebar = System.out.println();
 
 글꼴, 크기 변경
 window -> preferences -> general -> appearance -> colors and fonts -> text font
+
+
+
+1001번
+
+
+public class Main {                                    //class 명을 Main으로 해줘야 codeup에서 채점됨 
+                                                        //안그러면  컴파일 에러뜸
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello");
+	}
+
+}
+
+
+
+1002번
+
+
+public class Main {        
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World");
+	}
+
+}
+
+
+1003번
+		System.out.println("Hello\nWorld");
+    
+Hello
+World
+
+
+1004번
+System.out.println("\'Hello\'");
+
+따옴표자체를 출력해주기 \'    \"
+
+'Hello'
+
+
+1005번
+System.out.println("\"Hello World\"");
+
+"Hello World"
+
+
+1006번
+System.out.println("\"!@#$%^&*()\"");
+
+"!@#$%^&*()"
+
+
+1007번
+public class Main{
+	public static void main(String[] args) {
+		System.out.println("\"C:\\Download\\hello.cpp\"");
+	}
+}
+
+*역슬래시도 출력할려면 \ 만 단독으로 쓰면 오류뜨고 \\ 로 써주어야 한다
+
+"C:\Download\hello.cpp"
+
+
+
+
+
+1008번
+public class Main{
+	public static void main(String[] args) {
+		System.out.println("\u250c\u252C\u2510\n\u251c\u253c\u2524\n\u2514\u2534\u2518");
+	}
+}
+
+아니면 이렇게 따로따로 써주던가
+
+		System.out.println("\u250c\u252C\u2510");
+		System.out.println("\u251c\u253c\u2524");
+		System.out.println("\u2514\u2534\u2518");
+┌┬┐
+├┼┤
+└┴┘
+
+
+
+1010번
+1010번~1013번 해설 : https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1010%EB%B2%88-1011%EB%B2%88-1012%EB%B2%88-1013%EB%B2%88-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
