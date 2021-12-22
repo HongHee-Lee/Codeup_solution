@@ -192,6 +192,8 @@ p
 p
 
 
+1012번
+실수의 입력
 import java.util.Scanner;
 
 public class Main{
@@ -215,8 +217,27 @@ https://codeup.kr/problem.php?id=1013
 https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1010%EB%B2%88-1011%EB%B2%88-1012%EB%B2%88-1013%EB%B2%88-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
 
 
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		int a,b;
+		Scanner sc = new Scanner(System.in);
+		a=sc.nextInt();
+		b=sc.nextInt();
+		System.out.printf("%d %d", a,b);
+	}
+}
 
 
+//또 다른 출력방법 
+// System.out.println(a);
+// System.out.println(b);
+
+
+
+
+1014번
 
 
 자바 1065 ~
