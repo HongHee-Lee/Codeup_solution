@@ -238,6 +238,113 @@ public class Main{
 
 
 1014번
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+	
+	                                 //;붙이기
+	Scanner input = new Scanner(System.in);    //new Scanner 에서 S 대문자
+	
+	char a = input.next().charAt(0);     //nextcharAt(0) x 
+	char b=input.next().charAt(0);          //0 은 인덱스 번호임(0번째 문자를 변환)
+	
+	System.out.printf("%c %c",b,a);         //ln 이 아니라 f
+	                                         // 문자는 %c로 출력 (%d아님)
+	
+	}
+}
+
+A b
+b A
+
+
+
+
+1015번
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner input= new Scanner(System.in);
+		
+		float a = input.nextFloat();
+		
+		System.out.printf("%.2f",a);
+		
+		
+	}
+}
+1.59254
+1.59
+
+
+
+
+1017번
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		System.out.println(n + " "+n+" "+n);
+	}
+}
+
+125
+125 125 125
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		System.out.printf("%d %d %d",n,n, n);
+	}
+}
+125
+125 125 125
+
+
+
+1018번
+useDelimiter 사용한 풀이
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		//System.out.println("시간과 분을 입력하세요 (:로 구분) : ");
+				
+		Scanner sc = new Scanner(System.in);                                                  //여기 2둘
+		Scanner input = new Scanner(sc.next()).useDelimiter("[:\n]");                         //특히 유의하기 -> 암기하는게 좋을듯 useDelimiter 사용법도 공부
+		
+		int a=input.nextInt();
+		int b=input.nextInt();
+		
+		/*           공부하다가 해결 못한 부분
+		Scanner sc = new Scanner(System.in);
+		String[] str = sc.nextLine().split(":");
+		
+		String a=str[0];
+		String b= str[1];
+		*/
+		System.out.printf("%d:%d",a,b);
+
+	}
+}
+3:45
+3:45
+
+
+
+
 
 
 자바 1065 ~
