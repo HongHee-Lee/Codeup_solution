@@ -345,6 +345,61 @@ public class Main{
 
 
 
+1019번
+https://codeup.kr/problem.php?id=1019
+(%02d를 사용하면 2칸을 사용해 출력하는데, 한 자리 수인 경우 앞에 0을 붙여 출력한다.)
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Scanner input = new Scanner(sc.next()).useDelimiter("[.]");                        //useDelimiter 쓸때 반드시 []있어야.
+				int a=input.nextInt();
+				int b=input.nextInt();
+				int c=input.nextInt();
+		
+		System.out.printf("%04d.%02d.%02d", a,b,c);                                    //"%04d.%02d.%02d"
+
+	}
+}
+2013.8.5
+2013.08.05
+
+
+
+
+1019번 다른풀이
+					split 공부!!1
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String a= sc.next();
+		
+		String arr[]=a.split("\\.");                         //배열(array[])과 split 사용한 방법
+		
+		int year= Integer.valueOf(arr[0]);                   //int year = Integer.valuOf(arr[0]);
+		int month=Integer.valueOf(arr[1]);
+		int day=Integer.valueOf(arr[2]);
+				
+		System.out.printf("%04d.%02d.%02d", year,month,day);
+
+	}
+}
+2013.8.5
+2013.08.05
+
+
+
+2020번
+
 
 
 자바 1065 ~
