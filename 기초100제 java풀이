@@ -477,14 +477,66 @@ Informatics
 1022번
 https://codeup.kr/problem.php?id=1022
 
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc= new Scanner(System.in);
+		String input = sc.next();
+		
+		System.out.println(input);
+	}
+}
+Programming is very fun!!
+Programming                                          //이래서 nextLine을 사용함
+ 
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc= new Scanner(System.in);
+		String input = sc.nextLine();                               // nextLine 의 위력을 체감할수 있는 문제
+		
+		System.out.printf(input);
+	}
+}
+Programming is very fun!!
+Programming is very fun!!                        //nextLine을 사용하면 끝까지 출력됨을 알 수 있다.
+
+
+
+
+1023번
+https://codeup.kr/problem.php?id=1023
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		String arr[] =s.split("[.]");         //split 쓸때 "\\." 이나 "[.]"형태로 써줘야. 그냥 "."은 작동안됨.
+
+		int a = Integer.parseInt(arr[0]);                           //parseInt 대신 valueOf 써줘도 됨
+		int b = Integer.parseInt(arr[1]);
+		
+		System.out.printf("%d\n%d", a,b);
+	}
+}
+1.414213
+
+1
+414213
 
 
 
 
 
-
-
-
+1024번
+https://codeup.kr/problem.php?id=1024
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
