@@ -399,6 +399,90 @@ public class Main{
 
 
 2020번
+https://codeup.kr/problem.php?id=1020
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+	Scanner sc = new Scanner(System.in);
+	String str = sc.next();
+	String arr[]=str.split("-");
+		int front = Integer.valueOf(arr[0]);
+		int back = Integer.valueOf(arr[1]);
+	
+	System.out.printf("%06d%07d",front,back);
+	}
+}
+
+000907-1121112
+0009071121112
+
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+	Scanner sc = new Scanner(System.in);
+	String str = sc.next();
+	String arr[]=str.split("[-&/*,]");                                    //split("[-&/*,]")     새로운 표현 공부\!           \\을 넣으면 \으로 안잘림 why?
+		int front = Integer.parseInt(arr[0]);                         //parseInt             새로운 표현 공부!
+		int back = Integer.parseInt(arr[1]);
+	
+	System.out.printf("%06d%07d",front,back);
+	}
+}
+
+156895*2546821
+1568952546821
+
+
+
+
+
+
+1021번
+https://codeup.kr/problem.php?id=1021
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		String data[]=new String[51];                 //배열 만드는 법 공부
+				
+		Scanner sc = new Scanner(System.in);
+		data[50]= sc.next(); 
+		
+		System.out.println(data[50]);
+		
+		
+		
+	}
+}
+길이 51의 배열을 만들고 50번째 자리에 넣기
+그리고 50번째 자리의 값을 가져오기
+
+Informatics
+Informatics
+
+
+
+
+
+
+1022번
+https://codeup.kr/problem.php?id=1022
+
+
+
+
+
+
+
 
 
 
