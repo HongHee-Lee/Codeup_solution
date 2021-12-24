@@ -537,6 +537,30 @@ public class Main{
 
 1024번
 https://codeup.kr/problem.php?id=1024
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s=sc.next();
+		char arr[]=new char[s.length()];      //new char[s.length()]; 문법공붑!
+		
+		for(int i=0;i<=s.length()-1;i++)     //문자열의 길이 s.length()
+		{
+			arr[i] = s.charAt(i);
+			//System.out.printf("\'"+arr[i]+"\'"+"\n");     ' 어파스트로피 하나를 찍기 위해 "\'"+ 를 일일이 찍어줘야!  
+			System.out.printf("'%c'\n", arr[i]);         //%c 쓸땐 println 이아닌 printf 써야 됨을 항상 유의
+		}	
+	}
+}
+boy
+'b'
+'o'
+'y'
+
+1025
+
+
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
