@@ -608,6 +608,30 @@ public class Main{
 
 
 
+split을 사용한 방법(아래코드는 코드업에서 오류뜸)
+
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		String s= sc.next();
+		String arr[]=s.split(":");
+		
+		System.out.println(arr[1]);
+	}
+}
+12:00:34
+00
+
+코드업에서 오류 안뜨게 하려면 출력부분을
+		if(arr[1].equals("00"))
+			System.out.println("0");
+		else
+			System.out.println(arr[1]);
+이렇게 해줘야됨
+
+
+
 
 
 1027
