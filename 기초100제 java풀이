@@ -637,7 +637,52 @@ public class Main{
 1027
 
 
+https://codeup.kr/problem.php?id=1027
+import java.util.Scanner;
 
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s= sc.next();
+		String arr[]=s.split("[.]");
+		
+		int [] arr2= new int[arr.length];
+				
+		for(int i=0; i<=arr.length-1; i++)
+		{                                                            //%02d로 출력하려면
+			arr2[i] = Integer.parseInt(arr[i]);                  //정수형 배열 int arr2를 새로 만들어서 안에다가 넣어줘야함
+		}
+		
+		System.out.printf("%02d-%02d-%04d", arr2[2],arr2[1],arr2[0]); 
+		//System.out.println(arr[2]+'-'+arr[1]+'-'+arr[0]);
+	}
+}
+2014.07.15
+15-07-2014
+
+
+
+아니면 그냥
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s= sc.next();
+		String arr[]=s.split("[.]");
+		
+		System.out.println(arr[2]+'-'+arr[1]+'-'+arr[0]);
+	}
+}
+2014.07.15
+15-07-2014 
+
+
+
+
+
+1028
+https://codeup.kr/problem.php?id=1028
 
 
 자바 1065 ~
