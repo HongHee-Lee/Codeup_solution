@@ -577,7 +577,7 @@ public class Main{
 		for(int i=0; i<=num.length()-1; i++)
 		{
 			arr[i]=num.charAt(i)-'0';            //char-'0'을 사용하면 아스키코드값을 알 필요없이 int형으로 변환이 가능하다
-		}
+		}                                             //https://gyuwon95.tistory.com/12?category=935078 참고(출처)
 		System.out.printf("[%d]\n",arr[0]*10000);
 		System.out.printf("[%d]\n",arr[1]*1000);
 		System.out.printf("[%d]\n",arr[2]*100);
@@ -589,7 +589,28 @@ public class Main{
 
 
 
+1026
+내코드
+import java.util.Scanner;
 
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		Scanner input=new Scanner(sc.next()).useDelimiter("[:]");       //useDelimiter 쓸때 앞에 String 쓰지말고 Scanner로 시작해야된다는거!
+		int a=input.nextInt();
+		int b=input.nextInt();
+		int c=input.nextInt();                                       //input.charAt(arr[0])-'0' 대신 input.nextInt() 가 쓰였다는거 주목!
+		System.out.printf("%d",b);
+	}
+}
+17:23:57
+23
+
+
+
+
+
+1027
 
 
 
