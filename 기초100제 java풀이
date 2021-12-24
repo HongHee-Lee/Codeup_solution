@@ -547,7 +547,7 @@ public class Main{
 		
 		for(int i=0;i<=s.length()-1;i++)     //문자열의 길이 s.length()
 		{
-			arr[i] = s.charAt(i);
+			arr[i] = s.charAt(i);                          //s.charAt() 으로 문자하나씩 꺼내기
 			//System.out.printf("\'"+arr[i]+"\'"+"\n");     ' 어파스트로피 하나를 찍기 위해 "\'"+ 를 일일이 찍어줘야!  
 			System.out.printf("'%c'\n", arr[i]);         //%c 쓸땐 println 이아닌 printf 써야 됨을 항상 유의
 		}	
@@ -558,7 +558,40 @@ boy
 'o'
 'y'
 
+
+
+
+
+
+
 1025
+https://codeup.kr/problem.php?id=1025
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		String num = sc.next();
+		int arr[]=new int[num.length()];
+		
+		for(int i=0; i<=num.length()-1; i++)
+		{
+			arr[i]=num.charAt(i)-'0';            //char-'0'을 사용하면 아스키코드값을 알 필요없이 int형으로 변환이 가능하다
+		}
+		System.out.printf("[%d]\n",arr[0]*10000);
+		System.out.printf("[%d]\n",arr[1]*1000);
+		System.out.printf("[%d]\n",arr[2]*100);
+		System.out.printf("[%d]\n",arr[3]*10);
+		System.out.printf("[%d]\n",arr[4]);
+		
+	}
+}
+
+
+
+
+
+
 
 
 
