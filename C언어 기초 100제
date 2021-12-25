@@ -713,8 +713,8 @@ double 데이터형을 사용하면
 int main()
 {
 	double a;
-	scanf("%lf", &a);                     //long float!!!
-	printf("%.11lf", a);
+	scanf("%lf", &a);                     //long float!!!                               //float -> double -> long double
+	printf("%.11lf", a);                                                                //%f ->    %lf ->     %Lf
 
     return 0;
 }
