@@ -871,14 +871,76 @@ public class Main{
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		//int n = Integer.valueOf(sc.next(),8);
-		int n = Integer.parseInt(sc.next(),8);    //sc.next()로 string으로 입력받은걸 8진수정수로 변환한걸 출력
+		//int n = Integer.valueOf(sc.next(),8);                             //valueOf 나 parseInt는 현재까지 거의 동일하게 쓰임을 확인. 차이가 있는진 더알아봐야.
+		int n = Integer.parseInt(sc.next(),8);                              //sc.next()로 string으로 입력받은걸 8진수정수로 변환한걸 출력
 		System.out.println(n);
 		
 	}
 }
 13
 11
+
+
+
+
+
+
+
+1035번
+https://codeup.kr/problem.php?id=1035
+1035 : [기초-출력변환] 16진 정수 1개 입력받아 8진수로 출력하기(설명)
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String a = sc.next();                 //일단 string으로 받기 
+		
+		int b= Integer.valueOf(a,16);           //16진수로 바꾼걸 10진수로 저장
+		
+		String c= Integer.toOctalString(b);       //8진수 String형태로 저장
+		System.out.println(c);                     //8진수 string형태로 출력
+		
+	}
+}
+f
+17
+
+
+
+
+잠깐!
+
+a,b,c대신에 한꺼번에 n을 넣어주었더니 안되더라
+그렇다면 
+이클립스에서는 파이썬과 달리 변수 갱신 개념이 없는건가???
+
+파이썬
+		a=0
+		a=a+1
+		a=a+2
+	
+		print(a)=3 
+
+이클립스		
+		a=0
+		b=a+1
+		c+b+2
+		System.out.println(a);     --> a=3
+		요러케 되는것인가?
+
+
+
+
+1036번
+https://codeup.kr/problem.php?id=1036
+1036 : [기초-출력변환] 영문자 1개 입력받아 10진수로 출력하기(설명)
+
+
+
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
