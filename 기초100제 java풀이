@@ -697,8 +697,8 @@ public class Main{
 	}
 }
 Enter the Number you want: 
-2147483648
-2147483648
+2147483648                        
+2147483648                                             //long n=sc.nextLong();
 
 
 
@@ -715,7 +715,7 @@ public class Main{
 	}
 }
 3.14159265359
-3.14159265359
+3.14159265359                                         //double n=sc.nextDouble();
 
 
 1030번
@@ -942,6 +942,141 @@ https://codeup.kr/problem.php?id=1036
 풀이참조 : 
 https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1036%EB%B2%88-%EC%98%81%EB%AC%B8%EC%9E%90-1%EA%B0%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-10%EC%A7%84%EC%88%98%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
 https://gyuwon95.tistory.com/19?category=935078
+
+c언어에서는 %c로 입력받고 %d로 출력하면 됨.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char a = sc.next().charAt(0);                //sc.next().charAt(0); 문자 하나만 입력받는 방법
+		
+		int b=(int)a;                                // (int)a - Ascii code number 변환 방법
+		
+		System.out.println(b);
+		
+
+	}
+}
+A
+65
+
+
+공부
+Java char to int Example
+int n = Integer.parseInt(String.valueOf(a));
+
+
+
+1037번
+https://codeup.kr/problem.php?id=1037
+1037 : [기초-출력변환] 정수 입력받아 아스키 문자로 출력하기
+10진 정수 1개를 입력받아 아스키 문자로 출력해보자
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		
+		char b=(char)a;                    //(char)a 는 아스키코드값에 해당하는 문자 반환            // (int)a 는 문자에 해당하는 아스키코드값을 반환
+		
+		System.out.println(b);
+	}
+}
+65
+A
+
+
+
+
+1038번                                                               // (1038번 1039번 셋트)
+1038 : [기초-산술연산] 정수 2개 입력받아 합 출력하기1(설명)
+정수 2개를 입력받아 합을 출력하는 프로그램을 작성해보자.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long n1 = sc.nextLong();
+		long n2 = sc.nextLong();
+		
+		System.out.printf("%d", n1+n2);                    //println(n1+n2);도 같은 결과 나옴
+
+	}
+}
+1073741824 1073741824
+2147483648
+
+
+1039번
+1039 : [기초-산술연산] 정수 2개 입력받아 합 출력하기2(설명)
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println(sc.nextLong()+sc.nextLong());
+
+	}
+}
+2147483648 2147483648
+4294967296
+
+
+
+
+1040번
+1040 : [기초-산술연산] 정수 1개 입력받아 부호 바꿔 출력하기(설명)
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		System.out.println(-n);
+		
+	}
+}
++2147483647
+-2147483647
+
+
+
+1041번
+1041 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)
+https://codeup.kr/problem.php?id=1041&rid=0
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char a = sc.next().charAt(0);
+		int n= (int)a;                           //아스키 코드 값을 저장한후 
+		char b = (char)(n+1);                   //아스키 코드 값 +1 한후 그에 해당하는 문자를 찾기\
+		
+		System.out.println(b);
+	}
+}
+a
+b
+
+
+
+
+
+1042 : [기초-산술연산] 정수 2개 입력받아 나눈 몫 출력하기(설명)
+https://codeup.kr/problem.php?id=1042
+
+
+
 
 
 자바 1065 ~
