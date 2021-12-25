@@ -662,7 +662,8 @@ public class Main{
 
 
 
-아니면 그냥
+아니면 그냥 %d 안써서 string을 int 로 변환하는 과정이 없이
+
 import java.util.Scanner;
 
 public class Main{
@@ -683,6 +684,27 @@ public class Main{
 
 1028
 https://codeup.kr/problem.php?id=1028
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the Number you want: ");
+		long n=sc.nextLong();                                                         //long n=sc.nextLong();
+		System.out.println(n);
+		
+	}
+}
+Enter the Number you want: 
+2147483648
+2147483648
+
+
+
+
+1029번
+
 
 
 자바 1065 ~
