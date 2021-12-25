@@ -704,8 +704,181 @@ Enter the Number you want:
 
 
 1029번
+1029 : [기초-데이터형] 실수 1개 입력받아 그대로 출력하기2(설명) 
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		double n=sc.nextDouble();
+		System.out.printf("%.11f",n);
+	}
+}
+3.14159265359
+3.14159265359
 
 
+1030번
+1030 : [기초-데이터형] 정수 1개 입력받아 그대로 출력하기3(설명)
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		long n = sc.nextLong();                              //long n = sc.nextLong();
+		System.out.println(n);
+	}
+}
+-9223372036854775808
+-9223372036854775808
+
+
+
+
+
+1031번
+1031 : [기초-출력변환] 10진 정수 1개 입력받아 8진수로 출력하기(설명)
+https://codeup.kr/problem.php?id=1031&rid=0
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		int n= sc.nextInt();
+		System.out.printf("%o", n);                                          //%o를 사용해 출력하면 8진수(octal)로 출력된다.
+	}
+}
+10
+12
+
+
+
+풀이2
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		String n= Integer.toOctalString(sc.nextInt());                           //String n= Integer.toOctalString(sc.nextInt());
+		System.out.println(n);
+	}
+}
+10
+12
+
+
+
+
+1032번
+1032 : [기초-출력변환] 10진 정수 입력받아 16진수로 출력하기1(설명)
+https://codeup.kr/problem.php?id=1032
+
+풀이1
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		String n = Integer.toHexString(sc.nextInt());          //toHexString이 String으로 만들어주는 건가봐. Int n으로 하면 cannot convert from String to int 라고함            
+		System.out.println(n);
+	}
+}
+255
+ff
+
+
+풀이2
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();                                      //위에 코드는 String n , 지금 코드는 int n 으로 시작하는거 잘보기
+		System.out.println(Integer.toHexString(n));                     //Integer.toHexString(n)       16진수로 표현하기
+	}
+}
+255
+ff
+
+
+
+풀이3
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		System.out.printf("%x", n);                                 //%x로 출력하면 16진수(hexadecimal) 소문자로 출력된다.
+	}
+}
+255
+ff
+
+
+
+
+
+1033 : [기초-출력변환] 10진 정수 입력받아 16진수로 출력하기2(설명)
+https://codeup.kr/problem.php?id=1033
+
+풀이1
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String n = Integer.toHexString(sc.nextInt()).toUpperCase();                   //toUpperCase() 문자열을 대문자로 변환 (내장함수)
+		System.out.println(n);                                                        //toLowerCase() 문자열을 소문자로 변환 (내장함수)
+	}
+}
+255
+FF
+
+
+풀이2
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		System.out.printf("%X", n);                                                 //%X로 출력하면 16진수(hexadecimal) 대문자로 출력된다.
+	}
+}
+255
+FF
+
+
+
+
+1034번
+1034 : [기초-출력변환] 8진 정수 1개 입력받아 10진수로 출력하기(설명)
+https://codeup.kr/problem.php?id=1034
+
+
+
+import java.util.Scanner;
+import java.util.function.ToIntFunction;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		//int n = Integer.valueOf(sc.next(),8);
+		int n = Integer.parseInt(sc.next(),8);    //sc.next()로 string으로 입력받은걸 8진수정수로 변환한걸 출력
+		System.out.println(n);
+		
+	}
+}
+13
+11
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
