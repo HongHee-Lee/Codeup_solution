@@ -1075,8 +1075,198 @@ b
 1042 : [기초-산술연산] 정수 2개 입력받아 나눈 몫 출력하기(설명)
 https://codeup.kr/problem.php?id=1042
 
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()/sc.nextInt());
+	}
+}
+1 3
+0
 
 
+
+
+1043번
+1043 : [기초-산술연산] 정수 2개 입력받아 나눈 나머지 출력하기(설명) 
+https://codeup.kr/problem.php?id=1043
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()%sc.nextInt());                //%연산하면 나머지가 나온다 이말씀!!1
+	}
+}
+10 3
+1
+
+
+
+
+
+1044번
+1044 : [기초-산술연산] 정수 1개 입력받아 1 더해 출력하기(설명)
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextLong()+1);
+		
+	}
+}
+2147483647
+2147483648
+
+
+
+1045번
+1045 : [기초-산술연산] 정수 2개 입력받아 자동 계산하기
+https://codeup.kr/problem.php?id=1045
+첫 줄에 합
+둘째 줄에 차,
+셋째 줄에 곱,
+넷째 줄에 몫,
+다섯째 줄에 나머지,
+여섯째 줄에 나눈 값을 순서대로 출력한다.
+(실수, 소수점 이하 셋째 자리에서 반올림해 둘째 자리까지 출력)
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		System.out.println(a+b);
+		System.out.println(a-b);
+		System.out.println(a*b);
+		System.out.println(a/b);
+		System.out.println(a%b);
+		System.out.printf("%.2f", (float)a/b);                             //(float)a/b    실수로 형변환은 c++과 같음
+	}
+}
+
+
+10 3
+13
+7
+30
+3
+1
+3.33
+
+
+
+
+
+1046번
+https://codeup.kr/problem.php?id=1046
+1046 : [기초-산술연산] 정수 3개 입력받아 합과 평균 출력하기
+정수 3개가 공백을 두고 입력된다.
+단, -2147483648 ~ +2147483647
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long a = sc.nextLong();                                               //요기 부분 long대신 int로 해줘도 됨
+		long b = sc.nextLong();
+		long c = sc.nextLong();
+		
+		System.out.println(a+b+c);
+		System.out.printf("%.1f", (float)((a+b+c)/3));                     //(float)((a+b+c)/3) 일케 하면 오류뜨고
+                                                                                   //(float)(a+b+c)/3  해주면 오류안뜸
+	}
+}
+1 2 3
+6
+2.0
+
+
+
+
+
+https://codeup.kr/problem.php?id=1047
+1047 : [기초-비트시프트연산] 정수 1개 입력받아 2배 곱해 출력하기(설명)
+정수 한 개가 입력된다.
+단, -1073741824 ~ +1073741823
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+
+		System.out.println(a<<1);                                     // a<<1 한번 밀어주면 2배 됨. c++과 같음
+
+	}
+}
+1024
+2048
+
+
+
+
+1048 : [기초-비트시프트연산] 한 번에 2의 거듭제곱 배로 출력하기(설명)
+https://codeup.kr/problem.php?id=1048
+
+정수 2개(a, b)를 입력받아 a를 2b(2의 b승)배 곱한 값으로 출력해보자.
+참고
+예를 들어 1 3 이 입력되면 1을 23(2의 3승)(8)배 하여 출력한다.
+a 를 2b(2의 b승)배 만큼 곱한 값을 출력한다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()<<sc.nextInt());                 //a<<b 는 a에 2의 b승을 곱해준것과 같다. c++과 문법 같음
+		
+
+	}
+}
+1 3
+8
+
+
+
+
+1049번
+1049 : [기초-비교연산] 두 정수 입력받아 비교하기1(설명)
+
+두 정수(a, b)를 입력받아
+
+a가 b보다 크면 1을, a가 b보다 작거나 같으면 0을 출력하는 프로그램을 작성해보자.
+
+예시
+printf("%d", 123<456); //비교 연산자 < 의 계산 결과인 1(참)이 출력된다.
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		if(a>b)
+			System.out.println(1);                            //c++에선 "%d",a>b 해주면 바로 1뜨는데 여긴 복잡하다잉? 
+		else
+			System.out.println(0);
+		
+
+	}
+}
+9 1
+1
 
 
 자바 1065 ~
