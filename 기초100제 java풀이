@@ -1304,7 +1304,23 @@ https://codeup.kr/problem.php?id=1051
 https://gyuwon95.tistory.com/27?category=935078
 https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1051%EB%B2%88-%EB%91%90-%EC%A0%95%EC%88%98-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B03-%EC%9E%90%EB%B0%94JAVA?category=871387
 
+import java.util.Scanner;
 
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long a = sc.nextLong();
+		long b = sc.nextLong();
+		
+		if(b>=a)
+			System.out.println(1);
+		else
+			System.out.println(0);
+	}
+}
+
+0 -1
+0
 
 
 
