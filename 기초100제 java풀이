@@ -1560,6 +1560,308 @@ public class Main{
 
 
 1058번
+1058 : [기초-논리연산] 둘 다 거짓일 경우만 참 출력하기
+https://codeup.kr/problem.php?id=1058
+두 개의 참(1) 또는 거짓(0)이 입력될 때,
+모두 거짓일 때에만 참이 계산되는 프로그램을 작성해보자.
+
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		if(a==0&b==0 )                    //모두 거짓일때만 참 출력
+			System.out.println(1);
+		else
+			System.out.println(0);
+		
+			
+	}
+}
+
+
+
+1 0
+0
+
+1 1
+0
+
+
+
+1059번
+https://codeup.kr/problem.php?id=1059
+1059 : [기초-비트단위논리연산] 비트단위로 NOT 하여 출력하기(설명)
+
+
+
+** 비트단위(bitwise) 연산자는,
+~(bitwise not), &(bitwise and), |(bitwise or), ^(bitwise xor),
+<<(bitwise left shift), >>(bitwise right shift)
+가 있다.
+
+예를 들어 1이 입력되었을 때 저장되는 1을 32비트 2진수로 표현하면
+        00000000 00000000 00000000 00000001 이고,
+~1은 11111111 11111111 11111111 11111110 가 되는데 이는 -2를 의미한다.
+
+
+예시
+int a=1;
+printf("%d", ~a); //-2가 출력된다.
+
+참고
+컴퓨터에 저장되는 모든 데이터들은 2진수 형태로 바뀌어 저장된다.
+0과 1로만 구성되는 비트단위들로 변환되어 저장되는데,
+양의 정수는 2진수 형태로 바뀌어 저장되고,
+음의 정수는 "2의 보수 표현"방법으로 저장된다.
+
+예를 들어 int형(4바이트(byte), 32비트)으로 선언된 변수에 양의 정수 5를 저장하면
+5의 2진수 형태인 101이 32비트로 만들어져
+00000000 00000000 00000000 00000101
+로 저장된다.(공백은 보기 편하도록 임의로 분리)
+
+int 형의 정수 0은
+00000000 00000000 00000000 00000000
+
+그리고 -1은 0에서 1을 더 빼고 32비트만 표시하는 형태로
+11111111 11111111 11111111 11111111 로 저장된다.
+
+-2는 -1에서 1을 더 빼면 된다.
+11111111 11111111 11111111 11111110 로 저장된다.
+
+그래서 int 형으로 선언된 변수에는 최소 -2147483648 을 의미하는
+10000000 00000000 00000000 00000000 부터
+
+최대 +2147483647 을 의미하는
+01111111 11111111 11111111 11111111 로 저장될 수 있는 것이다.
+
+그렇다면 -2147483648
+10000000 00000000 00000000 00000000 에서 1을 더 뺀다면?
+
+01111111 11111111 11111111 11111111 이 된다.
+즉 -2147483649 가 아닌 +2147483647 이 되는 것이다.
+
+이러한 것을 오버플로우(overflow, 넘침)라고 한다.
+
+이러한 내용을 간단히 표시하면, 정수 n이라고 할 때,
+
+~n = -n - 1
+-n = ~n + 1 과 같은 관계로 표현된다.
+
+이 관계를 그림으로 그려보면 마치 원형으로 수들이
+상대적으로 배치된 것과 같다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(~sc.nextInt());
+			
+	}
+}
+2
+-3
+
+
+
+1060번
+https://codeup.kr/problem.php?id=1060
+1060 : [기초-비트단위논리연산] 비트단위로 AND 하여 출력하기(설명)
+
+
+비트단위로 and 연산                                                                  //비트단위 and 연산 &
+
+예를 들어 3과 5가 입력되었을 때를 살펴보면
+3       : 00000000 00000000 00000000 00000011
+5       : 00000000 00000000 00000000 00000101
+3 & 5 : 00000000 00000000 00000000 00000001
+이 된다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()&sc.nextInt());
+		
+	}
+}
+3 5
+1
+
+1061 : [기초-비트단위논리연산] 비트단위로 OR 하여 출력하기(설명)
+https://codeup.kr/problem.php?id=1061
+
+비트단위로 or 연산                                                                           //비트단위로 or 연산  |
+
+** | 은 파이프(pipe)연산자라고도 불리는 경우가 있다.
+
+** 비트단위(bitwise) 연산자는,
+~(bitwise not), &(bitwise and), |(bitwise or), ^(bitwise xor),
+<<(bitwise left shift), >>(bitwise right shift)
+가 있다.
+
+예를 들어 3과 5가 입력되었을 때를 살펴보면
+3     : 00000000 00000000 00000000 00000011
+5     : 00000000 00000000 00000000 00000101
+3 | 5 : 00000000 00000000 00000000 00000111
+이 된다.
+
+비트단위 or 연산은 둘 중 하나라도 1인 자리를 1로 만들어주는 것과 같다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()|sc.nextInt());
+		
+	}
+}
+
+3 5
+7
+
+
+
+
+1062
+https://codeup.kr/problem.php?id=1062
+1062 : [기초-비트단위논리연산] 비트단위로 XOR 하여 출력하기(설명) 
+
+비트단위로 xor 연산                                                                                  //비트단위 xor연산 ^
+비트단위(bitwise) 연산자 ^(xor, circumflex/caret, 서컴플렉스/카릿)를 사용하면 된다.
+
+** 주의 ^은 수학식에서 거듭제곱(power)을 나타내는 기호와 모양은 같지만,
+C언어(java)에서는 전혀 다른 배타적 논리합(xor, 서로 다를 때 1)의 의미를 가진다.
+
+** 비트단위(bitwise) 연산자는,
+~(bitwise not), &(bitwise and), |(bitwise or), ^(bitwise xor),
+<<(bitwise left shift), >>(bitwise right shift)
+가 있다.
+
+예를 들어 3과 5가 입력되었을 때를 살펴보면
+3       : 00000000 00000000 00000000 00000011
+5       : 00000000 00000000 00000000 00000101
+3 ^ 5 : 00000000 00000000 00000000 00000110
+이 된다.
+이러한 비트단위 연산은 빠른 계산이 필요한 그래픽처리에서도 효과적으로 사용된다.
+
+구체적으로 설명하자면,
+두 장의 이미지가 겹쳐졌을 때 색이 서로 다른 부분만 처리할 수 있다.
+배경이 되는 그림과 배경 위에서 움직이는 그림이 있을 때,
+두 그림에서 차이만 골라내 배경 위에서 움직이는 그림의 색으로 바꿔주면
+전체 그림을 구성하는 모든 점들의 색을 다시 계산해 입히지 않고
+보다 효과적으로 그림을 처리할 수 있게 되는 것이다.
+비행기 슈팅게임 등을 상상해보면 된다.
+
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.nextInt()^sc.nextInt());
+		
+	}
+}
+
+3 5
+6
+
+
+
+1063 : [기초-삼항연산] 두 정수 입력받아 큰 수 출력하기(설명)
+https://codeup.kr/problem.php?id=1063
+
+입력된 두 정수 a, b 중 큰 값을 출력하는 프로그램을 작성해보자.
+단, 조건문을 사용하지 않고 3항 연산자 ? 를 사용한다.
+
+참고
+3개의 요소로 이루어지는 3항(ternary) 연산자는
+"조건식 ? (참일 때의 값) : (거짓일 때의 값)” 의 형태로 사용하는 연산자이다.
+- 조건식의 계산 결과가 참인 경우에는 ':' 왼쪽의 값 또는 식으로 바뀌고,
+- 거짓인 경우에는 ':' 오른쪽의 값 또는 식으로 바뀐다.
+
+예를 들어
+123 > 456 ? 0 : 1
+과 같은 표현식은 123 > 456 의 비교연산 결과가 거짓이므로 1이 된다.
+
+예시
+printf("%d", a>b ? a:b); //두 값 중 큰 값이 출력된다.
+
+예시 코드는 a>b 의 결과가 참(1)이면 (a>b ? a:b)의 결과는 a가 되고,
+거짓(0)이면 (a>b ? a:b)의 결과는 b가 된다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		System.out.println(a>b ? a:b);
+		
+	}
+}
+123 456
+456
+
+
+
+
+1064 : [기초-삼항연산] 정수 3개 입력받아 가장 작은 수 출력하기(설명)
+https://codeup.kr/problem.php?id=1064
+
+(a>b ? a:b)>c ? (a>b ? a:b):c 의 계산식은
+a, b, c 의 값 중 가장 큰 값으로 계산된다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c= sc.nextInt();
+		int AB = a<b ? a:b;
+		int ABc = AB<c ? AB:c;
+		System.out.println(ABc);
+		
+	}
+}
+
+3 -1 5
+-1
+
+https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1064%EB%B2%88-%EC%A0%95%EC%88%98-3%EA%B0%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EA%B0%80%EC%9E%A5-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
+이분 코드 이해안됨...?
+
+
+
+
+
+1065번
+1065 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝수만 출력하기(설명) 
+https://codeup.kr/problem.php?id=1065
+https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1065%EB%B2%88-%EC%A0%95%EC%88%98-3%EA%B0%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EC%A7%9D%EC%88%98%EB%A7%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
+https://gyuwon95.tistory.com/30?category=935078
+
+
+
+
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
