@@ -1464,7 +1464,102 @@ public class Main{
 
 1055 : [기초-논리연산] 하나라도 참이면 참 출력하기(설명)
 https://codeup.kr/problem.php?id=1055
+두 개의 참(1) 또는 거짓(0)이 입력될 때,
+하나라도 참이면 참을 출력하는 프로그램을 작성해보자.
 
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		if(sc.nextInt() ==1|| sc.nextInt()==1)                         //or연산자는 ||
+			System.out.println(1);
+		else
+			System.out.println(0);
+		
+			
+	}
+}
+1 1
+1
+
+1 0
+1
+
+0 0
+0
+
+
+
+
+1056
+1056 : [기초-논리연산] 참/거짓이 서로 다를 때에만 참 출력하기(설명)
+https://codeup.kr/problem.php?id=1056
+참/거짓이 서로 다를 때에만 1을 출력하고, 그 외의 경우에는 0을 출력한다.
+
+
+두 가지의 참(1) 또는 거짓(0)이 입력될 때,
+참/거짓이 서로 다를 때에만 참을 출력하는 프로그램을 작성해보자.
+
+참고
+이러한 논리연산을 XOR(exclusive or, 배타적 논리합)연산이라고도 부른다.
+집합의 의미로는 합집합에서 교집합을 뺀 것을 의미한다. 모두 같은 의미이다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		if( (a==1 & b==0) || (a==0 & b==1) )                                    //간단하게 하기 코드 if(a!=b)
+			System.out.println(1);
+		else
+			System.out.println(0);
+		
+			
+	}
+}
+1 1
+0
+
+
+
+1057
+1057 : [기초-논리연산] 참/거짓이 서로 같을 때에만 참 출력하기 
+두 개의 참(1) 또는 거짓(0)이 입력될 때,
+참/거짓이 서로 같을 때에만 참이 계산되는 프로그램을 작성해보자.
+
+참/거짓이 서로 같을 때에만 1을 출력하고, 그 외의 경우에는 0을 출력한다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		if( (a==0 & b==0) || (a==1 & b==1) )                      //코드 간단하게 하기 : if(a==b)  왠지는 생각해보기- 안어려워~
+			System.out.println(1);
+		else
+			System.out.println(0);
+		
+			
+	}
+}
+1 0
+0
+
+1 1
+1
+
+
+1058번
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
