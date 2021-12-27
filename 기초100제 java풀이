@@ -1325,6 +1325,145 @@ public class Main{
 
 
 1052번
+1052 : [기초-비교연산] 두 정수 입력받아 비교하기4(설명)
+두 정수(a, b)를 입력받아
+a와 b가 서로 다르면 1을, 그렇지 않으면 0을 출력하는 프로그램을 작성해보자.
+
+
+c언어에서는 예시
+printf("%d", 123!=123); //비교 연산자 !=의 계산 결과인 0(거짓)이 출력된다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		
+		if(a!=b)
+			System.out.println(1);
+		else
+			System.out.println(0);
+	}
+}
+0 1
+1
+
+
+
+
+1053번
+https://codeup.kr/problem.php?id=1053
+1053 : [기초-논리연산] 참 거짓 바꾸기(설명)
+
+c언어 섳명
+printf("%d", !0); //거짓의 반대, 즉 참인 1로 계산됨
+printf("%d", !1); //참의 반대, 즉 거짓인 0으로 계산됨
+printf("%d", !999); //참의 반대, 즉 거짓인 0으로 계산됨
+
+
+c언어 복습겸 
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	
+	if(n!=1)
+		printf("%d", !0);     //거짓이면 참이다 
+	else if(n!=0)
+		printf("%d", !1);     //참이면 거짓이다              !1, !0 c++에선 작동되나 java에선 작동 안됨
+}
+1
+0
+--------------------------------
+
+
+0
+1
+--------------------------------
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		if(n!=1)
+			System.out.print(1);
+		else if(n!=0)
+			System.out.print(0);
+			
+	}
+}
+1
+0
+
+
+
+
+
+1054번
+https://codeup.kr/problem.php?id=1054
+1054 : [기초-논리연산] 둘 다 참일 경우만 참 출력하기(설명) 
+
+
+두 개의 참(1) 또는 거짓(0)이 입력될 때,
+모두 참일 때에만 참을 출력하는 프로그램을 작성해보자.
+
+
+
+참고
+논리연산자 && 는 주어진 2개의 논리값이 모두 참(1) 일 때에만 1(참)로 계산하고,
+그 외의 경우에는 0(거짓) 으로 계산한다.
+
+이러한 논리연산을 AND 연산이라고도 부르고, · 으로 표시하거나 생략하며,
+집합 기호로는 ∩(교집합, intersection)을 의미한다. 모두 같은 의미이다.
+
+참, 거짓의 논리값(boolean value)인 불 값을 다루어주는 논리연산자는
+!(not), &&(and), ||(or) 이 있다.
+
+예시
+printf("%d", 1&&1); //둘 다 참을 의미하므로 1로 계산되어 출력된다.
+
+
+둘 다 참(1)일 경우에만 1을 출력하고, 그 외의 경우에는 0을 출력한다.
+
+
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//int a = sc.nextInt(); 
+		//int b= sc.nextInt();
+		//if(a==1 & b==1 )                       //  || - or , &나 && - and
+		if(sc.nextInt() ==1 && sc.nextInt()==1)                     //한꺼번에 써주던가 아니면 위에 세줄처럼 a,b일일이 입력해주던가.
+			System.out.print(1);
+		else
+			System.out.print(0);
+			
+	}
+}
+1 1
+1
+
+
+1 0
+0
+
+
+1055 : [기초-논리연산] 하나라도 참이면 참 출력하기(설명)
+https://codeup.kr/problem.php?id=1055
 
 
 자바 1065 ~
