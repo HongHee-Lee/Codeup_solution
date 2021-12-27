@@ -23,9 +23,18 @@ window -> preferences -> general -> appearance -> colors and fonts -> text font
 
 
 
+자바 코드업 1065번 ~ 해설강의 
+https://www.youtube.com/watch?v=iHyZ8n_rWF8
+
+자바 코드업 1071번~ 해설강의
+https://www.youtube.com/watch?v=s48wTjh0MlU
+
+
+
+
+
+
 1001번
-
-
 public class Main {                                    //class 명을 Main으로 해줘야 codeup에서 채점됨 
                                                         //안그러면  컴파일 에러뜸
 	public static void main(String[] args) {
@@ -1863,8 +1872,10 @@ https://gyuwon95.tistory.com/30?category=935078
 
 
 
+
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
+
 자바 1071~ 해설강의
 https://www.youtube.com/watch?v=s48wTjh0MlU
 https://www.youtube.com/watch?v=s48wTjh0MlU&t=40s
