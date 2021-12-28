@@ -2159,6 +2159,28 @@ if(str1 == str2)   문장 비교는 ==로 하는게 아님.
 
 
 
+아래 코드는 쌤이 알려준(나도 알고있는...)                 //그러나 코드업에선 잘 안돌아감
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char grade = sc.nextLine().charAt(0);                          //charAt써서 한문자 입력받으면
+		if (grade=='A')                                                // == 쓸수 있음
+			System.out.println("best!!!");
+		else if(grade=='B')
+			System.out.println("good!!");
+		else if(grade=='C')
+			System.out.println("run!");
+		else if(grade=='D')
+			System.out.println("slowly~");
+		else
+			System.out.println("what?");
+	}	
+}
+A
+best!!!
+
 
 
 
