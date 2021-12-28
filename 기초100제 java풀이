@@ -1868,6 +1868,353 @@ https://codeup.kr/problem.php?id=1065
 https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1065%EB%B2%88-%EC%A0%95%EC%88%98-3%EA%B0%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%95%84-%EC%A7%9D%EC%88%98%EB%A7%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
 https://gyuwon95.tistory.com/30?category=935078
 
+세 정수 a, b, c가 입력되었을 때, 짝수만 출력해보자.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt(); 
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+	
+		if(a%2==0)
+			System.out.println(a);
+		if(b%2==0)
+			System.out.println(b);
+		if(c%2==0)
+			System.out.println(c);
+	}	
+}
+1 2 4
+2
+4
+
+
+1066번
+https://codeup.kr/problem.php?id=1066
+1066 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝/홀 출력하기(설명)
+
+
+세 정수 a, b, c가 입력되었을 때, 짝(even)/홀(odd)을 출력해보자.
+입력된 순서대로 짝(even)/홀(odd)을 줄을 바꿔 출력한다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		if(a%2==0)
+			System.out.println("even");
+		else
+			System.out.println("odd");
+		
+		if(b%2==0)
+			System.out.println("even");
+		else
+			System.out.println("odd");
+		
+		if(c%2==0)
+			System.out.println("even");
+		else
+			System.out.println("odd");
+		
+	}	
+}
+
+
+1 2 8
+odd
+even
+even
+
+
+
+1067번
+1067 : [기초-조건/선택실행구조] 정수 1개 입력받아 분석하기(설명)
+https://codeup.kr/problem.php?id=1067
+
+정수 1개가 입력되었을 때, 음(minus)/양(plus)과 짝(even)/홀(odd)을 출력해보자.
+
+참고
+조건/선택 실행 구조의 안에 조건/선택 실행 구조를 다시 "중첩"할 수 있다.
+이는 "중첩(nested)"의 원리가 적용되는 내용으로 아래와 같은 구조가 가능하다.
+
+if 안에 if
+
+입력된 정수에 대해
+첫 줄에 minus 나 plus 를 출력하고,
+두 번째 줄에 odd 나 even 을 출력한다.
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		if(n<0)
+			{
+			System.out.println("minus");
+			if(n%2==0)
+				System.out.println("even");
+				
+			else
+				System.out.println("odd");
+			}
+		else if(n>0)
+			{
+			System.out.println("plus");
+			if(n%2==0)
+				System.out.println("even");
+			else
+				System.out.println("odd");
+			}
+		
+	}	
+}
+-2147483648
+minus
+even
+
+
+
+
+
+
+1068번
+1068 : [기초-조건/선택실행구조] 정수 1개 입력받아 평가 출력하기(설명)
+https://codeup.kr/problem.php?id=1068
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		if(n>=90 & n<=100)
+			System.out.println("A");
+		else if(n>=70 & n<90)
+			System.out.println("B");
+		else if(n>=40 & n<70)
+			System.out.println("C");
+		else if(n>=0& n<40)
+			System.out.println("D");
+		
+		
+	}	
+}
+73
+B
+
+
+
+1069번                                                           //대망의  switch( ) ... case... break; 제어문
+1069 : [기초-조건/선택실행구조] 평가 입력받아 다르게 출력하기(설명)
+https://codeup.kr/problem.php?id=1069
+
+평가를 문자(A, B, C, D, ...)로 입력받아 내용을 다르게 출력해보자.
+
+평가 내용
+평가 : 내용
+A : best!!!
+B : good!!
+C : run!
+D : slowly~
+나머지 문자들 : what?
+
+
+참고
+조건/선택문을 복합적으로 구성해 출력할 수도 있지만,
+
+switch(정수값)
+{
+  case 'A': //문자 'A'가 정수값 65('A'의 아스키 값)로 저장되기 때문에 가능하다.
+    ...;
+    break;
+  case 'B':
+    ...;
+    break;
+  case 'C':
+    ...;
+    break;
+  default:
+    ...;
+}
+
+위와 같은 switch( ) ... case... break; 제어문을 사용할 수 있다.
+
+** break; 를 사용하지 않으면 이후의 명령들도 계속 실행된다.
+default: 는 제시된 case 를 제외한 나머지 모든 경우에 실행된다.
+switch( ) 에 주어지는 값은 “정수"값만 가능하며,
+문자도 아스키코드 정수값이기 때문에 가능하다.
+
+
+
+
+***************************강의*************************** 
+String str1 = "??";
+if(str1 == str2)   문장 비교는 ==로 하는게 아님.
+문장 비교는 str1.equals("A") 처럼 해주세요
+**********************************************************
+
+
+import java.util.Scanner;                  // 공부한 내코드 
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char C = sc.next().charAt(0);
+		
+		switch(C)                                                    //switch(C)
+		{
+		case 'A':                                                 //case 'A': 세미콜론(;x)이 아니라 콜론임 유의 (:)
+			System.out.println("best!!!");                
+			break;
+		
+		case 'B':
+			System.out.println("good!!");
+			break;
+		
+		case 'C':
+			System.out.println("run!");
+			break;
+		
+		case 'D':
+			System.out.println("slowly~");
+			break;
+		
+		default:
+			System.out.println("what?");
+			break;
+		}
+	}	
+}
+
+
+/*
+String str1 = "??";
+if(str1 == str2)   문장 비교는 ==로 하는게 아님.
+문장 비교는 str1.equals("A") 처럼 해주세요
+*/
+
+A
+best!!!
+
+B
+good!!
+
+C
+run!
+
+D
+slowly~
+
+
+
+선생님이 알려주신 풀이2
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//char C = sc.next().charAt(0);
+		String C = sc.nextLine();
+		if (C.equals("A"))                                  //문자열의 비교시 C.equals("A") 형태로 쓰고 
+			System.out.println("best!!!");                  //Scanner에서는 char 이 아니라 String으로 입력받기 유의
+		else if(C.equals("B")) 
+			System.out.println("good!!");
+		else if(C.equals("C"))
+			System.out.println("run!");
+		else if(C.equals("D"))
+			System.out.println("slowly~");
+		else
+			System.out.println("what?");
+	}	
+}
+g
+what?
+
+B
+good!!
+
+/*
+String str1 = "??";
+if(str1 == str2)   문장 비교는 ==로 하는게 아님.
+문장 비교는 str1.equals("A") 처럼 해주세요
+*/
+
+
+
+
+
+
+
+1070번
+https://codeup.kr/problem.php?id=1070
+1070 : [기초-조건/선택실행구조] 월 입력받아 계절 출력하기(설명)
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		switch(n)
+		{
+			case 12:                                           //이걸 한꺼번에 case 12, 1,2: 로 작성해도 이클립스에선 작동 됨.// 근데 코드업에선 오류뜸
+			case 1:
+			case 2:
+				System.out.println("winter");
+				break;
+			
+			case 3:
+			case 4:
+			case 5:
+				System.out.println("spring");
+				break;
+			
+			case 6:
+			case 7:
+			case 8:
+				System.out.println("summer");
+				break;
+			
+			case 9:
+			case 10:
+			case 11:
+				System.out.println("fall");
+				break;
+		}
+	}	
+}
+4
+spring
+
+
+
+
+
+1071번
+1071 : [기초-반복실행구조] 0 입력될 때까지 무한 출력하기1(설명)
+https://codeup.kr/problem.php?id=1071
+
+
+
 
 
 
