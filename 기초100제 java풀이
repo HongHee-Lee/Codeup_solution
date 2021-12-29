@@ -352,6 +352,20 @@ public class Main{
 3:45
 
 
+블로거님 참고 BufferedReader 등 이용한 코드
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Main{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println(br.readLine());
+	}
+}
+3:45
+3:45
 
 
 1019번
@@ -541,6 +555,24 @@ public class Main{
 414213
 
 
+빠른 BufferedReader 사용하기                                                 //BufferedReader도 IOException 이랑 InputStreamReader 더있다는 거 외엔 Scanner 보다 속도가 빠르대요
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Main{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String a = br.readLine();
+		String arr[]=a.split("\\.");
+		System.out.println(arr[0]+'\n'+arr[1]);
+	}
+}
+1.414213
+1
+414213
 
 
 
@@ -2923,10 +2955,126 @@ B*F=A5
 1083 : [기초-종합] 3 6 9 게임의 왕이 되자!(설명) 
 https://codeup.kr/problem.php?id=1083
 
+1 부터 그 수까지 순서대로 공백을 두고 수를 출력하는데,
+3 또는 6 또는 9인 경우 그 수 대신 영문 대문자 X 를 출력한다.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		for(int i = 1 ; i<=n;i++)
+			if(i%3==0) System.out.println('X');
+			else System.out.println(i);
+
+		
+	}
+}
+
+9
+1
+2
+X
+4
+5
+X
+7
+8
+X
 
 
 
 
+
+1084번
+1084 : [기초-종합] 빛 섞어 색 만들기(설명)
+https://codeup.kr/problem.php?id=1084
+
+
+빨강(red), 초록(green), 파랑(blue) 빛을 섞어
+여러 가지 빛의 색을 만들어 내려고 한다.
+
+빨강(r), 초록(g), 파랑(b) 각각의 빛의 개수가 주어질 때,
+(빛의 강약에 따라 0 ~ n-1 까지 n가지의 빛 색깔을 만들 수 있다.)
+
+주어진 rgb 빛들을 다르게 섞어 만들 수 있는 모든 경우의 조합(r g b)과
+총 가짓 수를 계산해보자.
+
+입
+빨녹파(r, g, b) 각 빛의 강약에 따른 가짓수(0 ~ 128))가 공백을 사이에 두고 입력된다.
+예를 들어, 3 3 3 은 각 색깔 빛에 대해서 그 강약에 따라 0~2까지 3가지의 색이 있음을 의미한다.
+
+출
+만들 수 있는 rgb 색의 정보를 오름차순(계단을 올라가는 순, 12345... abcde..., 가나다라마...)으로
+줄을 바꿔 모두 출력하고, 마지막에 그 개수를 출력한다.
+
+
+
+
+import java.util.Scanner;                                                                //정답이지만 시간 초과 뜸  
+                                                                                //블로거님왈 '왜 버퍼리더와 버퍼라이터를 쓰는지 알겠다.'
+										//https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1084%EB%B2%88-%EB%B9%9B-%EC%84%9E%EC%96%B4-%EC%83%89-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9E%90%EB%B0%94JAVA?category=871387
+public class Main{
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int count = 0;
+		
+		for(int i=0; i<=a-1; i++)
+			for(int j=0; j<=b-1; j++)
+				for(int k=0;k<=c-1;k++)
+					{
+					System.out.println(i+" "+j+" "+k);
+					count+=1;
+					}
+		System.out.println(count);
+		
+	}
+}
+2 2 2
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+8
+
+
+
+BufferedReader로 작성한 코드
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int a= br.read();
+		int b = br.read();
+		int c = br.read();
+		
+		int count=0;
+		
+		for(int i=0;i<=a-1;i++)
+			for(int j=0;j<=b-1;j++)
+				for(int k=0;k<=c-1;c++)
+				{
+					System.out.printf("%d %d %d\n", i,j,k);
+					count+=1;
+				}
+		System.out.println(count);
+	}
+}
 
 
 
