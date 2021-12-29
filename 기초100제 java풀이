@@ -2631,15 +2631,59 @@ public class test {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();                                  //String s의 길이를 알아보자.
-		System.out.println(s.length());				   //today is Tuesday     ---->   s.length() 는 16임(공백포함)
+		System.out.println(s.length());				   //s='today is Tuesday'     ---->   s.length() 는 16임(공백포함)
 	}
 
 }
-*******************************************************
+********************************************************
 
 
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String arr[]= s.split(" ");                       //리스트 만들어주는 (배열 생성)코드         String arr[]    -    String[] arr        둘다 eclipse에서 실행가능
+		for(int i=0; i<=s.length(); i++)
+		System.out.println(arr[i]);
+	}
+}
+x b k d l q g a c
+x
+b
+k
+d
+l
+q
+g
+a
+c
 
 
+****************************공부****************************
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String arr[]= s.split(" ");
+		//int len = arr.length;                          //배열의 길이를 구하려면 arr.length 임. ()없음
+		//System.out.println(len);                       //"today is Tuesday"를 공백으로 자르고(split(" "))  길이 구하면 3 임.      
+		for(int i=0; i<=s.length(); i++)
+		System.out.println(arr[i]);
+	}
+}
+today is Tuesday
+today
+is
+Tuesday
+**********************************************************
 
 
 
