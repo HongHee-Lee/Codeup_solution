@@ -3297,7 +3297,7 @@ public class Main{
 	public static void main(String[] args)  {
 
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
+		long a = sc.nextInt();                         // 코드업에선 a를 long으로 정의해줘야 답이 맞게뜸.(테스트 할때 큰숫자를 집어넣나봄. int로 하니 잘못된 풀이뜸)
 		int r= sc.nextInt();
 		int n= sc.nextInt();
 		
@@ -3310,6 +3310,55 @@ public class Main{
 }
 
 
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args)  {
+
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int r= sc.nextInt();
+		int n= sc.nextInt();
+		System.out.println(a*(long)Math.pow(r, n-1));            //(long)Math.pow(r,n-1) 하면 그냥Math.pow는 1458.0 인데 (long)을 앞에써줘서 정수형 1458로 바꿀수 있음
+	}
+}
+2 3 7
+1458
+
+
+
+
+1091번
+1091 : [기초-종합] 수 나열하기3 
+https://codeup.kr/problem.php?id=1091
+
+
+시작 값(a), 곱할 값(m), 더할 값(d), 몇 번째인지를 나타내는 정수(n)가 입력될 때,
+n번째 수를 출력하는 프로그램을 만들어보자.
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args)  {
+
+		Scanner sc = new Scanner(System.in);
+		long a = sc.nextInt();
+		int m = sc.nextInt();
+		int d = sc.nextInt();
+		int n = sc.nextInt();
+		
+		for (int i=1; i<=n-1;i++)
+			{a=a*m+d;}
+		System.out.println(a);
+	}
+}
+1 -2 1 8
+-85
+
+
+1092 : [기초-종합] 함께 문제 푸는 날(설명)
+https://codeup.kr/problem.php?id=1092
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
