@@ -3534,6 +3534,40 @@ int arr[]=new int[num.length()];
 
 
 
+                                      //BufferedReader 이용한 코드   작동 안됨....
+				      
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main{
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int n= br.read();
+		String arr[]=br.readLine().split(" ");        //10진 정수로 변환할때 Integer.valueOf(char) 이나 Integer.parseInt(char) 활용
+		
+		int Sarr[]= new int[24];
+		
+		for(int i=1; i <= n; i++)
+		{
+			Sarr[i]=Integer.valueOf(arr[i]);
+		}
+		
+		for(int i=1; i<=23;i++)
+		{
+			bw.write(Sarr[i]);
+			bw.flush();
+		}
+
+	}
+}
+
+
+
 
 자바 1065 ~
 https://www.youtube.com/watch?v=iHyZ8n_rWF8
