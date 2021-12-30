@@ -3078,7 +3078,7 @@ public class Main{
 		}
 
 		bw.write(String.valueOf(count));            		//bw.write(count); 이유는 아직 몰지만 일케 단순히 출력하면 안됨\
-		bw.flush();
+		bw.flush();                                      //bw.flush();만 삭제하고 (바로위 string.valueOf 놓아두고) 코드업 제출시 잘못된 풀이로 뜸.(시간은 63으로 짧게뜨긴함)
 	}
 }
 
@@ -3418,8 +3418,36 @@ public class Main{
 3 7 9
 63
 
+bufferedreader 사용한 문장
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
+public class Main{
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String arr[]=br.readLine().split(" ");        //10진 정수로 변환할때 Integer.valueOf(char) 이나 Integer.parseInt(char) 활용
+		int a=Integer.parseInt(arr[0]);
+		int b=Integer.parseInt(arr[1]);
+		int c=Integer.parseInt(arr[2]);
+
+		int day=1;
+
+		do{
+			if(day%a==0 & day%b==0 & day%c==0) break;
+			day++;
+			}
+		while(true);
+		System.out.println(day);
+	}
+}
+3 7 9
+63
 
 
 
