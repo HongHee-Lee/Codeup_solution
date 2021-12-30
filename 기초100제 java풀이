@@ -3367,8 +3367,65 @@ In Java
 'T'는 char 정도로 이해하면 되는가? *정확한건 확인안됨.
 ***********************************************************************
 
-1092 : [기초-종합] 함께 문제 푸는 날(설명)
+
+
+
+
+
+1092 : [기초-종합] 함께 문제 푸는 날(설명)             //최소공배수
 https://codeup.kr/problem.php?id=1092
+
+수학에서 배운 최소공배수를 생각한 사람들도 있을 것이다. 하지만, 정보에서 배우고 경험하는
+정보과학의 세상은 때때로 컴퓨터의 힘을 빌려 간단한 방법으로 해결할 수 있게 한다.
+
+아래의 코드를 읽고 이해한 후 도전해 보자.
+
+day는 날 수, a/b/c는 방문 주기이다.
+...
+day=1;
+while(day%a!=0 || day%b!=0 || day%c!=0) day++; //이게 무슨 의미일까?
+printf(＂%d＂, day);
+...
+....
+
+같은 날 동시에 가입한 인원 3명이 규칙적으로 방문하는,
+방문 주기가 공백을 두고 입력된다. (단, 입력값은 100이하의 자연수이다.)
+3명이 다시 모두 함께 방문해 문제를 풀어보는 날(동시 가입/등업 후 며칠 후?)을 출력한다.
+
+
+
+//<while문을 이용한 풀이>
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args)  {
+
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		int day=1;
+		
+		for(int i=0;;i++)                                  //요기 부분만 while(true) 로 바꿔주면 while문 됨
+			{
+			if(day%a==0 & day%b==0 & day%c==0) break;
+			day++;
+			}                                          //요기 바로 아래에 while(true); (세미콜론 유의!) 추가하고 for문 대신 do 넣어주면 do while문 됨
+		System.out.println(day);
+	}
+}
+3 7 9
+63
+
+
+
+
+
+
+1093 : [기초-1차원배열] 이상한 출석 번호 부르기1(설명)
+https://codeup.kr/problem.php?id=1093
+
 
 
 
