@@ -4262,8 +4262,66 @@ public class Main{
 
 
 
+시간초과 해결!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+import java.util.Scanner;     
 
+public class Main{
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int[][] arr = new int[11][11];
+		
+		for(int i=1; i<=10; i++)
+			for(int j=1; j<=10; j++)
+				{ 
+				arr[i][j] = sc.nextInt();    //바둑판의 상태 입력받기
+				}
+		
+		int x=2;               //초기 좌표 2,2 입력
+		int y=2;
+		
+		
+		while(arr[x][y]!=2)
+		{
+			arr[x][y]=9;
+			if(arr[x][y+1]!=1) {y++;}
+			else if(arr[x+1][y]!=1) {x++;}
+			else break;
+		}
+		arr[x][y]=9;
+		
+		for(int i=1; i<=10; i++)
+			{
+			for(int j=1; j<=10; j++)
+				{
+				System.out.printf("%d ",arr[i][j]);
+				}
+			System.out.println();
+			}
+	}
+}
+1 1 1 1 1 1 1 1 1 1
+1 0 0 1 0 0 0 0 0 1
+1 0 0 1 1 1 0 0 0 1
+1 0 0 0 0 0 0 1 0 1
+1 0 0 0 0 0 0 1 0 1
+1 0 0 0 0 1 0 1 0 1
+1 0 0 0 0 1 2 1 0 1
+1 0 0 0 0 1 0 0 0 1
+1 0 0 0 0 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1
 
+1 1 1 1 1 1 1 1 1 1 
+1 9 9 1 0 0 0 0 0 1 
+1 0 9 1 1 1 0 0 0 1 
+1 0 9 9 9 9 9 1 0 1 
+1 0 0 0 0 0 9 1 0 1 
+1 0 0 0 0 1 9 1 0 1 
+1 0 0 0 0 1 9 1 0 1 
+1 0 0 0 0 1 0 0 0 1 
+1 0 0 0 0 0 0 0 0 1 
+1 1 1 1 1 1 1 1 1 1 
 
 
 
