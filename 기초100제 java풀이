@@ -4049,6 +4049,12 @@ public class Main{
 1099 : [기초-2차원배열] 성실한 개미
 https://codeup.kr/problem.php?id=1099
 
+https://yongku.tistory.com/entry/%EC%BD%94%EB%93%9C%EC%97%85-%EA%B8%B0%EC%B4%88-100%EC%A0%9C-1099%EB%B2%88-%EC%84%B1%EC%8B%A4%ED%95%9C-%EA%B0%9C%EB%AF%B8-%EC%9E%90%EB%B0%94JAVA?category=871387
+https://gyuwon95.tistory.com/42?category=935078
+
+댓글  비번 :17656
+
+
 개미는 오른쪽으로 움직이다가 벽을 만나면 아래쪽으로 움직여 가장 빠른 길로 움직였다.
 (오른쪽에 길이 나타나면 다시 오른쪽으로 움직인다.)
 
@@ -4160,6 +4166,94 @@ public class Main{
 
 
 
+										//일단 실패한 bufferedwriter 사용한 코드
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+
+public class Main{
+	public static void main(String[] args) throws IOException{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		
+		String[] arr2 = br.readLine();
+		
+		String[][] arr1 = new String[11][11];
+
+		int[][] arr = new int[11][11];
+		                                                     //how to split long array to smaller array? googling 공부하다 끝남\
+		
+		
+		for(int i=1; i<=10; i++)
+			for(int j=1; j<=10; j++)
+				{ 
+				arr1[i][j] = br.readLine();    //바둑판의 상태 입력받기
+				//arr[i][j] = br.read();
+				}
+
+		
+		for(int i=1; i<=10; i++)
+			for(int j=1; j<=10; j++)
+				{ 
+				arr[i][j] = Integer.parseInt(arr1[i][j]);
+				}
+		
+
+		
+		int x=2;               //초기 좌표 2,2 입력
+		int y=2;
+
+		
+		while(true)
+			{
+				if(arr[x][y+1]==0)
+					{
+					arr[x][y]=9;
+					arr[x][y+1]=9;
+					y=y+1;
+					}
+					
+				else if(arr[x][y+1]==1 & arr[x+1][y]==0)
+					{
+					arr[x][y]=9;
+					arr[x+1][y]=9;
+					x=x+1;
+					}
+				
+				else if(arr[x][y+1]==2)
+					{
+					arr[x][y]=9;
+					arr[x][y+1]=9;
+					break;
+					}
+				
+				else if(arr[x][y+1]==1 & arr[x+1][y]==2)
+					{
+					arr[x][y]=9;
+					arr[x+1][y]=9;
+					break;
+					}
+				}
+
+		
+		for(int i=1; i<=10; i++)
+			{
+			for(int j=1; j<=10; j++)
+				{
+				System.out.printf("%d ", arr[i][j]);
+				}
+			System.out.println();
+			}
+
+
+	}
+}
 
 
 
